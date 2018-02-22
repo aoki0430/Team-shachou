@@ -1,0 +1,774 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0A10E2675BD3AF44529BC969 /* Pods_shachouApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D31494D1956C75835357EA72 /* Pods_shachouApp.framework */; };
+		2A0B118E307612B1E99872E5 /* Pods_shachouAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D53195B86335D29590AE912E /* Pods_shachouAppTests.framework */; };
+		AFF5B99CEAE8ECC0B528BA6E /* Pods_shachouAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FBE8DB980236E8FFBAA9AF6 /* Pods_shachouAppUITests.framework */; };
+		FCE0EEC5203F141000A19FCF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE0EEC4203F141000A19FCF /* AppDelegate.swift */; };
+		FCE0EEC7203F141000A19FCF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE0EEC6203F141000A19FCF /* ViewController.swift */; };
+		FCE0EECA203F141000A19FCF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCE0EEC8203F141000A19FCF /* Main.storyboard */; };
+		FCE0EECC203F141000A19FCF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCE0EECB203F141000A19FCF /* Assets.xcassets */; };
+		FCE0EECF203F141000A19FCF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCE0EECD203F141000A19FCF /* LaunchScreen.storyboard */; };
+		FCE0EEDA203F141000A19FCF /* shachouAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE0EED9203F141000A19FCF /* shachouAppTests.swift */; };
+		FCE0EEE5203F141000A19FCF /* shachouAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE0EEE4203F141000A19FCF /* shachouAppUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FCE0EED6203F141000A19FCF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FCE0EEB9203F141000A19FCF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FCE0EEC0203F141000A19FCF;
+			remoteInfo = shachouApp;
+		};
+		FCE0EEE1203F141000A19FCF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FCE0EEB9203F141000A19FCF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FCE0EEC0203F141000A19FCF;
+			remoteInfo = shachouApp;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		166B78C201E54218CADCDC54 /* Pods-shachouApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-shachouApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-shachouApp/Pods-shachouApp.debug.xcconfig"; sourceTree = "<group>"; };
+		1D15922405ED669D5935E908 /* Pods-shachouAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-shachouAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-shachouAppTests/Pods-shachouAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		25EE96F51EF7A55C3562F330 /* Pods-shachouAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-shachouAppUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-shachouAppUITests/Pods-shachouAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		517FBE2E87DA94DFB02A16FC /* Pods-shachouAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-shachouAppUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-shachouAppUITests/Pods-shachouAppUITests.release.xcconfig"; sourceTree = "<group>"; };
+		5B1E96D2D8EC2308C5D4067B /* Pods-shachouApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-shachouApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-shachouApp/Pods-shachouApp.release.xcconfig"; sourceTree = "<group>"; };
+		5FBE8DB980236E8FFBAA9AF6 /* Pods_shachouAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_shachouAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D8167E9646F2F599A904AF4 /* Pods-shachouAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-shachouAppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-shachouAppTests/Pods-shachouAppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		D31494D1956C75835357EA72 /* Pods_shachouApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_shachouApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D53195B86335D29590AE912E /* Pods_shachouAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_shachouAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FCE0EEC1203F141000A19FCF /* shachouApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = shachouApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FCE0EEC4203F141000A19FCF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FCE0EEC6203F141000A19FCF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FCE0EEC9203F141000A19FCF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FCE0EECB203F141000A19FCF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FCE0EECE203F141000A19FCF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FCE0EED0203F141000A19FCF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FCE0EED5203F141000A19FCF /* shachouAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = shachouAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FCE0EED9203F141000A19FCF /* shachouAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = shachouAppTests.swift; sourceTree = "<group>"; };
+		FCE0EEDB203F141000A19FCF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FCE0EEE0203F141000A19FCF /* shachouAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = shachouAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FCE0EEE4203F141000A19FCF /* shachouAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = shachouAppUITests.swift; sourceTree = "<group>"; };
+		FCE0EEE6203F141000A19FCF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FCE0EEBE203F141000A19FCF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0A10E2675BD3AF44529BC969 /* Pods_shachouApp.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FCE0EED2203F141000A19FCF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2A0B118E307612B1E99872E5 /* Pods_shachouAppTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FCE0EEDD203F141000A19FCF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AFF5B99CEAE8ECC0B528BA6E /* Pods_shachouAppUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		12B786BC390543B8B53201C4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				166B78C201E54218CADCDC54 /* Pods-shachouApp.debug.xcconfig */,
+				5B1E96D2D8EC2308C5D4067B /* Pods-shachouApp.release.xcconfig */,
+				9D8167E9646F2F599A904AF4 /* Pods-shachouAppTests.debug.xcconfig */,
+				1D15922405ED669D5935E908 /* Pods-shachouAppTests.release.xcconfig */,
+				25EE96F51EF7A55C3562F330 /* Pods-shachouAppUITests.debug.xcconfig */,
+				517FBE2E87DA94DFB02A16FC /* Pods-shachouAppUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		53475457471D818DFDF45911 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D31494D1956C75835357EA72 /* Pods_shachouApp.framework */,
+				D53195B86335D29590AE912E /* Pods_shachouAppTests.framework */,
+				5FBE8DB980236E8FFBAA9AF6 /* Pods_shachouAppUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FCE0EEB8203F141000A19FCF = {
+			isa = PBXGroup;
+			children = (
+				FCE0EEC3203F141000A19FCF /* shachouApp */,
+				FCE0EED8203F141000A19FCF /* shachouAppTests */,
+				FCE0EEE3203F141000A19FCF /* shachouAppUITests */,
+				FCE0EEC2203F141000A19FCF /* Products */,
+				12B786BC390543B8B53201C4 /* Pods */,
+				53475457471D818DFDF45911 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		FCE0EEC2203F141000A19FCF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FCE0EEC1203F141000A19FCF /* shachouApp.app */,
+				FCE0EED5203F141000A19FCF /* shachouAppTests.xctest */,
+				FCE0EEE0203F141000A19FCF /* shachouAppUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FCE0EEC3203F141000A19FCF /* shachouApp */ = {
+			isa = PBXGroup;
+			children = (
+				FCE0EEC4203F141000A19FCF /* AppDelegate.swift */,
+				FCE0EEC6203F141000A19FCF /* ViewController.swift */,
+				FCE0EEC8203F141000A19FCF /* Main.storyboard */,
+				FCE0EECB203F141000A19FCF /* Assets.xcassets */,
+				FCE0EECD203F141000A19FCF /* LaunchScreen.storyboard */,
+				FCE0EED0203F141000A19FCF /* Info.plist */,
+			);
+			path = shachouApp;
+			sourceTree = "<group>";
+		};
+		FCE0EED8203F141000A19FCF /* shachouAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				FCE0EED9203F141000A19FCF /* shachouAppTests.swift */,
+				FCE0EEDB203F141000A19FCF /* Info.plist */,
+			);
+			path = shachouAppTests;
+			sourceTree = "<group>";
+		};
+		FCE0EEE3203F141000A19FCF /* shachouAppUITests */ = {
+			isa = PBXGroup;
+			children = (
+				FCE0EEE4203F141000A19FCF /* shachouAppUITests.swift */,
+				FCE0EEE6203F141000A19FCF /* Info.plist */,
+			);
+			path = shachouAppUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FCE0EEC0203F141000A19FCF /* shachouApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FCE0EEE9203F141000A19FCF /* Build configuration list for PBXNativeTarget "shachouApp" */;
+			buildPhases = (
+				14D0F9B975270051A6525F3B /* [CP] Check Pods Manifest.lock */,
+				FCE0EEBD203F141000A19FCF /* Sources */,
+				FCE0EEBE203F141000A19FCF /* Frameworks */,
+				FCE0EEBF203F141000A19FCF /* Resources */,
+				6D9C9B85F43CCF99DB00CF1B /* [CP] Embed Pods Frameworks */,
+				9DBDE102C7143D3E918B20A4 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = shachouApp;
+			productName = shachouApp;
+			productReference = FCE0EEC1203F141000A19FCF /* shachouApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FCE0EED4203F141000A19FCF /* shachouAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FCE0EEEC203F141000A19FCF /* Build configuration list for PBXNativeTarget "shachouAppTests" */;
+			buildPhases = (
+				EA0355463A0912A4FB678A49 /* [CP] Check Pods Manifest.lock */,
+				FCE0EED1203F141000A19FCF /* Sources */,
+				FCE0EED2203F141000A19FCF /* Frameworks */,
+				FCE0EED3203F141000A19FCF /* Resources */,
+				FAAF976D079968B3E3B2F54E /* [CP] Embed Pods Frameworks */,
+				2B2FBCF578FBD9AA6E030B5A /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FCE0EED7203F141000A19FCF /* PBXTargetDependency */,
+			);
+			name = shachouAppTests;
+			productName = shachouAppTests;
+			productReference = FCE0EED5203F141000A19FCF /* shachouAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		FCE0EEDF203F141000A19FCF /* shachouAppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FCE0EEEF203F141000A19FCF /* Build configuration list for PBXNativeTarget "shachouAppUITests" */;
+			buildPhases = (
+				A47EE24F69E2BF02606B877C /* [CP] Check Pods Manifest.lock */,
+				FCE0EEDC203F141000A19FCF /* Sources */,
+				FCE0EEDD203F141000A19FCF /* Frameworks */,
+				FCE0EEDE203F141000A19FCF /* Resources */,
+				E1C8B26023DAB4F9F58872EB /* [CP] Embed Pods Frameworks */,
+				1FE82CC8ABDE859A939E6CC5 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FCE0EEE2203F141000A19FCF /* PBXTargetDependency */,
+			);
+			name = shachouAppUITests;
+			productName = shachouAppUITests;
+			productReference = FCE0EEE0203F141000A19FCF /* shachouAppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FCE0EEB9203F141000A19FCF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = "Team-shachou";
+				TargetAttributes = {
+					FCE0EEC0203F141000A19FCF = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+					FCE0EED4203F141000A19FCF = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = FCE0EEC0203F141000A19FCF;
+					};
+					FCE0EEDF203F141000A19FCF = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = FCE0EEC0203F141000A19FCF;
+					};
+				};
+			};
+			buildConfigurationList = FCE0EEBC203F141000A19FCF /* Build configuration list for PBXProject "shachouApp" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FCE0EEB8203F141000A19FCF;
+			productRefGroup = FCE0EEC2203F141000A19FCF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FCE0EEC0203F141000A19FCF /* shachouApp */,
+				FCE0EED4203F141000A19FCF /* shachouAppTests */,
+				FCE0EEDF203F141000A19FCF /* shachouAppUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FCE0EEBF203F141000A19FCF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FCE0EECF203F141000A19FCF /* LaunchScreen.storyboard in Resources */,
+				FCE0EECC203F141000A19FCF /* Assets.xcassets in Resources */,
+				FCE0EECA203F141000A19FCF /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FCE0EED3203F141000A19FCF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FCE0EEDE203F141000A19FCF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		14D0F9B975270051A6525F3B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-shachouApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1FE82CC8ABDE859A939E6CC5 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-shachouAppUITests/Pods-shachouAppUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2B2FBCF578FBD9AA6E030B5A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-shachouAppTests/Pods-shachouAppTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6D9C9B85F43CCF99DB00CF1B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-shachouApp/Pods-shachouApp-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/DKImagePickerController/DKImagePickerController.framework",
+				"${BUILT_PRODUCTS_DIR}/GrowingTextView/GrowingTextView.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyUserDefaults/SwiftyUserDefaults.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DKImagePickerController.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GrowingTextView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyUserDefaults.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-shachouApp/Pods-shachouApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9DBDE102C7143D3E918B20A4 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-shachouApp/Pods-shachouApp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A47EE24F69E2BF02606B877C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-shachouAppUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E1C8B26023DAB4F9F58872EB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-shachouAppUITests/Pods-shachouAppUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EA0355463A0912A4FB678A49 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-shachouAppTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FAAF976D079968B3E3B2F54E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-shachouAppTests/Pods-shachouAppTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FCE0EEBD203F141000A19FCF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FCE0EEC7203F141000A19FCF /* ViewController.swift in Sources */,
+				FCE0EEC5203F141000A19FCF /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FCE0EED1203F141000A19FCF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FCE0EEDA203F141000A19FCF /* shachouAppTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FCE0EEDC203F141000A19FCF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FCE0EEE5203F141000A19FCF /* shachouAppUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FCE0EED7203F141000A19FCF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FCE0EEC0203F141000A19FCF /* shachouApp */;
+			targetProxy = FCE0EED6203F141000A19FCF /* PBXContainerItemProxy */;
+		};
+		FCE0EEE2203F141000A19FCF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FCE0EEC0203F141000A19FCF /* shachouApp */;
+			targetProxy = FCE0EEE1203F141000A19FCF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		FCE0EEC8203F141000A19FCF /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FCE0EEC9203F141000A19FCF /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		FCE0EECD203F141000A19FCF /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FCE0EECE203F141000A19FCF /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FCE0EEE7203F141000A19FCF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		FCE0EEE8203F141000A19FCF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FCE0EEEA203F141000A19FCF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 166B78C201E54218CADCDC54 /* Pods-shachouApp.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = shachouApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.team-shachou.shachouApp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FCE0EEEB203F141000A19FCF /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5B1E96D2D8EC2308C5D4067B /* Pods-shachouApp.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = shachouApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.team-shachou.shachouApp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		FCE0EEED203F141000A19FCF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9D8167E9646F2F599A904AF4 /* Pods-shachouAppTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = shachouAppTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.team-shachou.shachouAppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/shachouApp.app/shachouApp";
+			};
+			name = Debug;
+		};
+		FCE0EEEE203F141000A19FCF /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1D15922405ED669D5935E908 /* Pods-shachouAppTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = shachouAppTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.team-shachou.shachouAppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/shachouApp.app/shachouApp";
+			};
+			name = Release;
+		};
+		FCE0EEF0203F141000A19FCF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 25EE96F51EF7A55C3562F330 /* Pods-shachouAppUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = shachouAppUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.team-shachou.shachouAppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = shachouApp;
+			};
+			name = Debug;
+		};
+		FCE0EEF1203F141000A19FCF /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 517FBE2E87DA94DFB02A16FC /* Pods-shachouAppUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = shachouAppUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.team-shachou.shachouAppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = shachouApp;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FCE0EEBC203F141000A19FCF /* Build configuration list for PBXProject "shachouApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FCE0EEE7203F141000A19FCF /* Debug */,
+				FCE0EEE8203F141000A19FCF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FCE0EEE9203F141000A19FCF /* Build configuration list for PBXNativeTarget "shachouApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FCE0EEEA203F141000A19FCF /* Debug */,
+				FCE0EEEB203F141000A19FCF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FCE0EEEC203F141000A19FCF /* Build configuration list for PBXNativeTarget "shachouAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FCE0EEED203F141000A19FCF /* Debug */,
+				FCE0EEEE203F141000A19FCF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FCE0EEEF203F141000A19FCF /* Build configuration list for PBXNativeTarget "shachouAppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FCE0EEF0203F141000A19FCF /* Debug */,
+				FCE0EEF1203F141000A19FCF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FCE0EEB9203F141000A19FCF /* Project object */;
+}
