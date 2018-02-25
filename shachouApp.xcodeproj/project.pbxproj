@@ -11,12 +11,17 @@
 		2A0B118E307612B1E99872E5 /* Pods_shachouAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D53195B86335D29590AE912E /* Pods_shachouAppTests.framework */; };
 		AFF5B99CEAE8ECC0B528BA6E /* Pods_shachouAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FBE8DB980236E8FFBAA9AF6 /* Pods_shachouAppUITests.framework */; };
 		FCE0EEC5203F141000A19FCF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE0EEC4203F141000A19FCF /* AppDelegate.swift */; };
-		FCE0EEC7203F141000A19FCF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE0EEC6203F141000A19FCF /* ViewController.swift */; };
-		FCE0EECA203F141000A19FCF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCE0EEC8203F141000A19FCF /* Main.storyboard */; };
+		FCE0EEC7203F141000A19FCF /* RootVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE0EEC6203F141000A19FCF /* RootVC.swift */; };
 		FCE0EECC203F141000A19FCF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCE0EECB203F141000A19FCF /* Assets.xcassets */; };
 		FCE0EECF203F141000A19FCF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCE0EECD203F141000A19FCF /* LaunchScreen.storyboard */; };
 		FCE0EEDA203F141000A19FCF /* shachouAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE0EED9203F141000A19FCF /* shachouAppTests.swift */; };
 		FCE0EEE5203F141000A19FCF /* shachouAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE0EEE4203F141000A19FCF /* shachouAppUITests.swift */; };
+		FCE0EF8F2042F18600A19FCF /* TopVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE0EF8E2042F18600A19FCF /* TopVC.swift */; };
+		FCE0EF912042F19300A19FCF /* ShopVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE0EF902042F19300A19FCF /* ShopVC.swift */; };
+		FCE0EF932042F29800A19FCF /* ShopModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE0EF922042F29800A19FCF /* ShopModel.swift */; };
+		FCE0EF952042F32D00A19FCF /* TopModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE0EF942042F32D00A19FCF /* TopModel.swift */; };
+		FCE0EF972042F6C200A19FCF /* CheckInPhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE0EF962042F6C200A19FCF /* CheckInPhotoCell.swift */; };
+		FCE0EF992042F6F500A19FCF /* TopCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE0EF982042F6F500A19FCF /* TopCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,8 +53,7 @@
 		D53195B86335D29590AE912E /* Pods_shachouAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_shachouAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCE0EEC1203F141000A19FCF /* shachouApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = shachouApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCE0EEC4203F141000A19FCF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		FCE0EEC6203F141000A19FCF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		FCE0EEC9203F141000A19FCF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FCE0EEC6203F141000A19FCF /* RootVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootVC.swift; sourceTree = "<group>"; };
 		FCE0EECB203F141000A19FCF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FCE0EECE203F141000A19FCF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FCE0EED0203F141000A19FCF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -59,6 +63,12 @@
 		FCE0EEE0203F141000A19FCF /* shachouAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = shachouAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCE0EEE4203F141000A19FCF /* shachouAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = shachouAppUITests.swift; sourceTree = "<group>"; };
 		FCE0EEE6203F141000A19FCF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FCE0EF8E2042F18600A19FCF /* TopVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopVC.swift; sourceTree = "<group>"; };
+		FCE0EF902042F19300A19FCF /* ShopVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopVC.swift; sourceTree = "<group>"; };
+		FCE0EF922042F29800A19FCF /* ShopModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopModel.swift; sourceTree = "<group>"; };
+		FCE0EF942042F32D00A19FCF /* TopModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopModel.swift; sourceTree = "<group>"; };
+		FCE0EF962042F6C200A19FCF /* CheckInPhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInPhotoCell.swift; sourceTree = "<group>"; };
+		FCE0EF982042F6F500A19FCF /* TopCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,8 +148,13 @@
 			isa = PBXGroup;
 			children = (
 				FCE0EEC4203F141000A19FCF /* AppDelegate.swift */,
-				FCE0EEC6203F141000A19FCF /* ViewController.swift */,
-				FCE0EEC8203F141000A19FCF /* Main.storyboard */,
+				FCE0EEC6203F141000A19FCF /* RootVC.swift */,
+				FCE0EF8E2042F18600A19FCF /* TopVC.swift */,
+				FCE0EF902042F19300A19FCF /* ShopVC.swift */,
+				FCE0EF922042F29800A19FCF /* ShopModel.swift */,
+				FCE0EF942042F32D00A19FCF /* TopModel.swift */,
+				FCE0EF962042F6C200A19FCF /* CheckInPhotoCell.swift */,
+				FCE0EF982042F6F500A19FCF /* TopCell.swift */,
 				FCE0EECB203F141000A19FCF /* Assets.xcassets */,
 				FCE0EECD203F141000A19FCF /* LaunchScreen.storyboard */,
 				FCE0EED0203F141000A19FCF /* Info.plist */,
@@ -283,7 +298,6 @@
 			files = (
 				FCE0EECF203F141000A19FCF /* LaunchScreen.storyboard in Resources */,
 				FCE0EECC203F141000A19FCF /* Assets.xcassets in Resources */,
-				FCE0EECA203F141000A19FCF /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -470,7 +484,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FCE0EEC7203F141000A19FCF /* ViewController.swift in Sources */,
+				FCE0EEC7203F141000A19FCF /* RootVC.swift in Sources */,
+				FCE0EF972042F6C200A19FCF /* CheckInPhotoCell.swift in Sources */,
+				FCE0EF952042F32D00A19FCF /* TopModel.swift in Sources */,
+				FCE0EF992042F6F500A19FCF /* TopCell.swift in Sources */,
+				FCE0EF8F2042F18600A19FCF /* TopVC.swift in Sources */,
+				FCE0EF912042F19300A19FCF /* ShopVC.swift in Sources */,
+				FCE0EF932042F29800A19FCF /* ShopModel.swift in Sources */,
 				FCE0EEC5203F141000A19FCF /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -507,14 +527,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		FCE0EEC8203F141000A19FCF /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FCE0EEC9203F141000A19FCF /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		FCE0EECD203F141000A19FCF /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
