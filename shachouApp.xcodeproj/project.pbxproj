@@ -112,6 +112,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		F4F4996020466FCE00BE081A /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				FCE0EEC6203F141000A19FCF /* ViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
 		FCE0EEB8203F141000A19FCF = {
 			isa = PBXGroup;
 			children = (
@@ -137,12 +145,12 @@
 		FCE0EEC3203F141000A19FCF /* shachouApp */ = {
 			isa = PBXGroup;
 			children = (
-				FCE0EEC4203F141000A19FCF /* AppDelegate.swift */,
-				FCE0EEC6203F141000A19FCF /* ViewController.swift */,
 				FCE0EEC8203F141000A19FCF /* Main.storyboard */,
 				FCE0EECB203F141000A19FCF /* Assets.xcassets */,
 				FCE0EECD203F141000A19FCF /* LaunchScreen.storyboard */,
 				FCE0EED0203F141000A19FCF /* Info.plist */,
+				FCE0EEC4203F141000A19FCF /* AppDelegate.swift */,
+				F4F4996020466FCE00BE081A /* ViewControllers */,
 			);
 			path = shachouApp;
 			sourceTree = "<group>";
