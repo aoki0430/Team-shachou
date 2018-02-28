@@ -17,6 +17,8 @@
 		FCE0EEDA203F141000A19FCF /* shachouAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE0EED9203F141000A19FCF /* shachouAppTests.swift */; };
 		FCE0EEE5203F141000A19FCF /* shachouAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE0EEE4203F141000A19FCF /* shachouAppUITests.swift */; };
 		FCE0EF9B2046A35100A19FCF /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE0EF9A2046A35100A19FCF /* Constant.swift */; };
+		FCE0EF9F2046B06C00A19FCF /* TopModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE0EF9E2046B06C00A19FCF /* TopModel.swift */; };
+		FCE0EFA12046B29000A19FCF /* ShopModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE0EFA02046B29000A19FCF /* ShopModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +61,8 @@
 		FCE0EEE4203F141000A19FCF /* shachouAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = shachouAppUITests.swift; sourceTree = "<group>"; };
 		FCE0EEE6203F141000A19FCF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FCE0EF9A2046A35100A19FCF /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		FCE0EF9E2046B06C00A19FCF /* TopModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopModel.swift; sourceTree = "<group>"; };
+		FCE0EFA02046B29000A19FCF /* ShopModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +149,7 @@
 		FCE0EEC3203F141000A19FCF /* shachouApp */ = {
 			isa = PBXGroup;
 			children = (
+				FCE0EF9D2046B03900A19FCF /* Models */,
 				FCE0EECB203F141000A19FCF /* Assets.xcassets */,
 				FCE0EECD203F141000A19FCF /* LaunchScreen.storyboard */,
 				FCE0EED0203F141000A19FCF /* Info.plist */,
@@ -171,6 +176,15 @@
 				FCE0EEE6203F141000A19FCF /* Info.plist */,
 			);
 			path = shachouAppUITests;
+			sourceTree = "<group>";
+		};
+		FCE0EF9D2046B03900A19FCF /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FCE0EF9E2046B06C00A19FCF /* TopModel.swift */,
+				FCE0EFA02046B29000A19FCF /* ShopModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -478,7 +492,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				FCE0EEC7203F141000A19FCF /* ViewController.swift in Sources */,
+				FCE0EF9F2046B06C00A19FCF /* TopModel.swift in Sources */,
 				FCE0EEC5203F141000A19FCF /* AppDelegate.swift in Sources */,
+				FCE0EFA12046B29000A19FCF /* ShopModel.swift in Sources */,
 				FCE0EF9B2046A35100A19FCF /* Constant.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
