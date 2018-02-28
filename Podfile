@@ -8,10 +8,13 @@ inhibit_all_warnings!
 target 'shachouApp' do
     # HTTPクライアントライブラリ
     pod 'Alamofire', '~> 4.0'
-    # 画像取得ライブラリ
-    pod 'Kingfisher'
+#    # 画像取得ライブラリ
+#    pod 'Kingfisher'
     # JSONパーサ
     pod 'SwiftyJSON'
+    
+    # マテリアルデザイン用のコンポーネント用のライブラリ
+    pod 'Material', '~> 2.0'
 
     # AutoLayoutのライブラリ
     pod 'SnapKit'

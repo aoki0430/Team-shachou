@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class ViewController: UIViewController {
+ final class WelcomeVC: UIViewController {
     
     let TeamlogoView: UIImageView = {
         let view = UIImageView()
@@ -99,13 +99,13 @@ class ViewController: UIViewController {
     }
 
     @objc func screen1(){
-        let nextvc = ViewController()
+        let nextvc = ShopSignUpVC()
         nextvc.view.backgroundColor = UIColor.white
         self.present(nextvc, animated: true, completion: nil)
     }
     
     @objc func screen2(){
-        let nextvc = ViewController()
+        let nextvc = ShopSignUpVC()
         nextvc.view.backgroundColor = UIColor.white
         self.present(nextvc, animated: true, completion: nil)
     }
