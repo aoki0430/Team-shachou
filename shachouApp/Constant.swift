@@ -1,15 +1,18 @@
 import SwiftyUserDefaults
-//import KeychainAccess
+import KeychainAccess
 
 extension DefaultsKeys {
     static let isShopAccount = DefaultsKey<Bool>("isShopAccount")
     static let isPrivateAccount = DefaultsKey<Bool>("isPrivateAccount")
+    static let numberOfShop = DefaultsKey<Int>("numberOfShop")
+    static let id = DefaultsKey<Int>("id")
 }
 
 
 let endpoint = "url"
 
-//let urlAuthSignUp = endpoint + version + "auth"
+let urlAuthSignUp = endpoint + "auth"
+let urlAuthSignIn = endpoint + "auth/sign_in"
 //let urlAuthSignUpFB = endpoint + version + "auth/facebook"
 //let urlUser = endpoint + version + "user"
 //let urlAuthSignIn = endpoint + version + "auth/sign_in"
@@ -33,7 +36,7 @@ let endpoint = "url"
 //let urlGuestSearchShops = endpoint + version + "public/shops/search"
 //let urlShareLinks = endpoint + version + "share_links/"
 
-//let keychain = Keychain(service: "com.nicola")
+let keychain = Keychain(service: "com.teamshachou")
 //var accessToken: String? {
 //    get { return keychain["accessToken"] }
 //    set(value) { keychain["accessToken"] = value }
@@ -44,9 +47,9 @@ let endpoint = "url"
 //    set(value) { keychain["client"] = value }
 //}
 //
-//var email: String? {
-//    get { return keychain["email"] }
-//    set(value) { keychain["email"] = value }
+var email: String? {
+    get { return keychain["email"] }
+    set(value) { keychain["email"] = value }
 //}
 //
 //var latitude: Double? {
