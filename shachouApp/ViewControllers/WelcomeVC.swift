@@ -99,7 +99,7 @@ import SnapKit
     }
 
     @objc func screen1(){
-        let nextvc = ShopSignUpVC()
+        let nextvc = UserSignUpVC()
         nextvc.view.backgroundColor = UIColor.white
         self.present(nextvc, animated: true, completion: nil)
     }

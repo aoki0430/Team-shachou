@@ -2,7 +2,7 @@ import UIKit
 import SnapKit
 import Material
 
-final class ShopSignUpVC: UIViewController {
+final class UserSignUpVC: UIViewController {
     
     let WelcomeView: UIImageView = {
         let view = UIImageView()
@@ -13,7 +13,7 @@ final class ShopSignUpVC: UIViewController {
     
     let label: UILabel = {
         let label = UILabel()
-        label.text = "出品者として登録"
+        label.text = "購入者として登録"
         label.textAlignment = .center
         label.textColor = .white
         label.font = .systemFont(ofSize: 25)
@@ -101,10 +101,11 @@ final class ShopSignUpVC: UIViewController {
     }
     
     @objc func screen1(){
-        let nextvc = ShopSignUpVC()
+        let nextvc = UserSignUpVC()
         nextvc.view.backgroundColor = UIColor.white
         self.present(nextvc, animated: true, completion: nil)
     }
+
     
     override func didReceiveMemoryWarning(){
         super.didReceiveMemoryWarning()
