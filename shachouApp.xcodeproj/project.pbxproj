@@ -10,8 +10,13 @@
 		0A10E2675BD3AF44529BC969 /* Pods_shachouApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D31494D1956C75835357EA72 /* Pods_shachouApp.framework */; };
 		2A0B118E307612B1E99872E5 /* Pods_shachouAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D53195B86335D29590AE912E /* Pods_shachouAppTests.framework */; };
 		AFF5B99CEAE8ECC0B528BA6E /* Pods_shachouAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FBE8DB980236E8FFBAA9AF6 /* Pods_shachouAppUITests.framework */; };
+		F4F499622046853100BE081A /* WelcomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F499612046853100BE081A /* WelcomeVC.swift */; };
+		F4F499642046C0FA00BE081A /* ShopSignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F499632046C0FA00BE081A /* ShopSignUpVC.swift */; };
+		F4F49966204FBE2100BE081A /* UserSignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F49965204FBE2100BE081A /* UserSignUpVC.swift */; };
+		F4F49968204FC68700BE081A /* TopVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F49967204FC68700BE081A /* TopVC.swift */; };
+		F4F4996A204FC6BA00BE081A /* MyShopVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F49969204FC6BA00BE081A /* MyShopVC.swift */; };
+		F4F4996C204FC6DB00BE081A /* ShopVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F4996B204FC6DB00BE081A /* ShopVC.swift */; };
 		FCE0EEC5203F141000A19FCF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE0EEC4203F141000A19FCF /* AppDelegate.swift */; };
-		FCE0EEC7203F141000A19FCF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE0EEC6203F141000A19FCF /* ViewController.swift */; };
 		FCE0EECC203F141000A19FCF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCE0EECB203F141000A19FCF /* Assets.xcassets */; };
 		FCE0EECF203F141000A19FCF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCE0EECD203F141000A19FCF /* LaunchScreen.storyboard */; };
 		FCE0EEDA203F141000A19FCF /* shachouAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE0EED9203F141000A19FCF /* shachouAppTests.swift */; };
@@ -50,9 +55,14 @@
 		9D8167E9646F2F599A904AF4 /* Pods-shachouAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-shachouAppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-shachouAppTests/Pods-shachouAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D31494D1956C75835357EA72 /* Pods_shachouApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_shachouApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D53195B86335D29590AE912E /* Pods_shachouAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_shachouAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F4F499612046853100BE081A /* WelcomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeVC.swift; sourceTree = "<group>"; };
+		F4F499632046C0FA00BE081A /* ShopSignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopSignUpVC.swift; sourceTree = "<group>"; };
+		F4F49965204FBE2100BE081A /* UserSignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSignUpVC.swift; sourceTree = "<group>"; };
+		F4F49967204FC68700BE081A /* TopVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopVC.swift; sourceTree = "<group>"; };
+		F4F49969204FC6BA00BE081A /* MyShopVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyShopVC.swift; sourceTree = "<group>"; };
+		F4F4996B204FC6DB00BE081A /* ShopVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopVC.swift; sourceTree = "<group>"; };
 		FCE0EEC1203F141000A19FCF /* shachouApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = shachouApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCE0EEC4203F141000A19FCF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		FCE0EEC6203F141000A19FCF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		FCE0EECB203F141000A19FCF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FCE0EECE203F141000A19FCF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FCE0EED0203F141000A19FCF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -123,7 +133,12 @@
 		F4F4996020466FCE00BE081A /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				FCE0EEC6203F141000A19FCF /* ViewController.swift */,
+				F4F499612046853100BE081A /* WelcomeVC.swift */,
+				F4F49965204FBE2100BE081A /* UserSignUpVC.swift */,
+				F4F499632046C0FA00BE081A /* ShopSignUpVC.swift */,
+				F4F49967204FC68700BE081A /* TopVC.swift */,
+				F4F49969204FC6BA00BE081A /* MyShopVC.swift */,
+				F4F4996B204FC6DB00BE081A /* ShopVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -397,7 +412,8 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/DKImagePickerController/DKImagePickerController.framework",
 				"${BUILT_PRODUCTS_DIR}/GrowingTextView/GrowingTextView.framework",
-				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/Material/Material.framework",
+				"${BUILT_PRODUCTS_DIR}/Motion/Motion.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyUserDefaults/SwiftyUserDefaults.framework",
@@ -407,7 +423,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DKImagePickerController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GrowingTextView.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Material.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Motion.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyUserDefaults.framework",
@@ -506,12 +523,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				FCE0EFAC204BE78700A19FCF /* MyShopModel.swift in Sources */,
-				FCE0EEC7203F141000A19FCF /* ViewController.swift in Sources */,
 				FCE0EEC5203F141000A19FCF /* AppDelegate.swift in Sources */,
 				FCE0EFAA204BE6D600A19FCF /* MyShopPresenter.swift in Sources */,
 				FCE0EF9B2046A35100A19FCF /* Constant.swift in Sources */,
 				FCE0EFA8204BD5DE00A19FCF /* SearchShopListPresenter.swift in Sources */,
 				FCE0EFA6204AFCE400A19FCF /* AuthModel.swift in Sources */,
+				FCE0EEC5203F141000A19FCF /* AppDelegate.swift in Sources */,
+				F4F499622046853100BE081A /* WelcomeVC.swift in Sources */,
+				F4F4996C204FC6DB00BE081A /* ShopVC.swift in Sources */,
+				F4F499642046C0FA00BE081A /* ShopSignUpVC.swift in Sources */,
+				F4F4996A204FC6BA00BE081A /* MyShopVC.swift in Sources */,
+				F4F49968204FC68700BE081A /* TopVC.swift in Sources */,
+				F4F49966204FBE2100BE081A /* UserSignUpVC.swift in Sources */,
+
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
