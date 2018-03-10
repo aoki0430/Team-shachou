@@ -100,13 +100,13 @@ final class UserSignUpVC: UIViewController {
         }
     }
     
-    @objc func screen1(){
-        let nextvc = UserSignUpVC()
-        nextvc.view.backgroundColor = UIColor.white
-        self.present(nextvc, animated: true, completion: nil)
+    @objc func screen1() {// selectorで呼び出す場合Swift4からは「@objc」をつける。
+        let nextVC = TopVC()
+        let naviVC = UINavigationController(rootViewController: nextVC)
+        nextVC.view.backgroundColor = UIColor.white
+        self.present(naviVC, animated: true, completion: nil)
     }
-
-    
+ 
     override func didReceiveMemoryWarning(){
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can berecreated.

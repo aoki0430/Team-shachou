@@ -97,6 +97,7 @@ import SnapKit
             $0.centerX.equalToSuperview()
         }
     }
+    
 
     @objc func screen1(){
         let nextvc = UserSignUpVC()
