@@ -6,4 +6,17 @@
 //  Copyright © 2018年 Team-shachou. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+class ShopVC: UIViewController {
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.navigationItem.title = "お店1"
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+    
+}

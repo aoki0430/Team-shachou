@@ -127,10 +127,10 @@
 			children = (
 				F4F499612046853100BE081A /* WelcomeVC.swift */,
 				F4F49965204FBE2100BE081A /* UserSignUpVC.swift */,
-				F4F499632046C0FA00BE081A /* ShopSignUpVC.swift */,
 				F4F49967204FC68700BE081A /* TopVC.swift */,
-				F4F49969204FC6BA00BE081A /* MyShopVC.swift */,
 				F4F4996B204FC6DB00BE081A /* ShopVC.swift */,
+				F4F499632046C0FA00BE081A /* ShopSignUpVC.swift */,
+				F4F49969204FC6BA00BE081A /* MyShopVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
