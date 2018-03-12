@@ -9,6 +9,13 @@ import UIKit
 
 class TopVC: UIViewController {
     
+//    let scrollView: UIScrollView = {
+//        let scrollView = UIScrollView()
+//        scrollView.contentSize = CGSize(width:300, height:1000)
+//        scrollView.backgroundColor = UIColor.gray
+//        return scrollView
+//    }()
+    
     let button1: UIButton = {
         let button = UIButton()
         button.backgroundColor = UIColor.brown
@@ -36,9 +43,17 @@ class TopVC: UIViewController {
         return button
     }()
     
-    
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationItem.title = "お店リスト"
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
+//        self.view.addSubview(scrollView)
+//        self.scrollView.addSubview(self.button1)
+//        self.scrollView.addSubview(self.button2)
+//        self.scrollView.addSubview(self.button3)
+
         self.view.addSubview(button1)
         self.view.addSubview(button2)
         self.view.addSubview(button3)
