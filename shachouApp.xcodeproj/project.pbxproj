@@ -16,7 +16,7 @@
 		F4F49968204FC68700BE081A /* TopVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F49967204FC68700BE081A /* TopVC.swift */; };
 		F4F4996A204FC6BA00BE081A /* MyShopVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F49969204FC6BA00BE081A /* MyShopVC.swift */; };
 		F4F4996C204FC6DB00BE081A /* ShopVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F4996B204FC6DB00BE081A /* ShopVC.swift */; };
-		FCE0EEC5203F141000A19FCF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE0EEC4203F141000A19FCF /* AppDelegate.swift */; };
+		FC2F33B420584C7C00940ADC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2F33B320584C7C00940ADC /* AppDelegate.swift */; };
 		FCE0EECC203F141000A19FCF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCE0EECB203F141000A19FCF /* Assets.xcassets */; };
 		FCE0EECF203F141000A19FCF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCE0EECD203F141000A19FCF /* LaunchScreen.storyboard */; };
 		FCE0EEDA203F141000A19FCF /* shachouAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE0EED9203F141000A19FCF /* shachouAppTests.swift */; };
@@ -61,8 +61,8 @@
 		F4F49967204FC68700BE081A /* TopVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopVC.swift; sourceTree = "<group>"; };
 		F4F49969204FC6BA00BE081A /* MyShopVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyShopVC.swift; sourceTree = "<group>"; };
 		F4F4996B204FC6DB00BE081A /* ShopVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopVC.swift; sourceTree = "<group>"; };
+		FC2F33B320584C7C00940ADC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FCE0EEC1203F141000A19FCF /* shachouApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = shachouApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		FCE0EEC4203F141000A19FCF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FCE0EECB203F141000A19FCF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FCE0EECE203F141000A19FCF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FCE0EED0203F141000A19FCF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -173,7 +173,7 @@
 				FCE0EECB203F141000A19FCF /* Assets.xcassets */,
 				FCE0EECD203F141000A19FCF /* LaunchScreen.storyboard */,
 				FCE0EED0203F141000A19FCF /* Info.plist */,
-				FCE0EEC4203F141000A19FCF /* AppDelegate.swift */,
+				FC2F33B320584C7C00940ADC /* AppDelegate.swift */,
 				F4F4996020466FCE00BE081A /* ViewControllers */,
 				FCE0EF9A2046A35100A19FCF /* Constant.swift */,
 			);
@@ -522,20 +522,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC2F33B420584C7C00940ADC /* AppDelegate.swift in Sources */,
 				FCE0EFAC204BE78700A19FCF /* MyShopModel.swift in Sources */,
-				FCE0EEC5203F141000A19FCF /* AppDelegate.swift in Sources */,
 				FCE0EFAA204BE6D600A19FCF /* MyShopPresenter.swift in Sources */,
 				FCE0EF9B2046A35100A19FCF /* Constant.swift in Sources */,
 				FCE0EFA8204BD5DE00A19FCF /* SearchShopListPresenter.swift in Sources */,
 				FCE0EFA6204AFCE400A19FCF /* AuthModel.swift in Sources */,
-				FCE0EEC5203F141000A19FCF /* AppDelegate.swift in Sources */,
 				F4F499622046853100BE081A /* WelcomeVC.swift in Sources */,
 				F4F4996C204FC6DB00BE081A /* ShopVC.swift in Sources */,
 				F4F499642046C0FA00BE081A /* ShopSignUpVC.swift in Sources */,
 				F4F4996A204FC6BA00BE081A /* MyShopVC.swift in Sources */,
 				F4F49968204FC68700BE081A /* TopVC.swift in Sources */,
 				F4F49966204FBE2100BE081A /* UserSignUpVC.swift in Sources */,
-
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -684,7 +682,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -695,6 +693,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = shachouApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.team-shachou.shachouApp";
@@ -710,6 +709,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = shachouApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.team-shachou.shachouApp";
