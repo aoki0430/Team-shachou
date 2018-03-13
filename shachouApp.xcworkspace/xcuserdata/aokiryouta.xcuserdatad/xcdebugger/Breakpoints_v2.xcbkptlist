@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "shachouApp/Models/MyShopModel.swift"
-            timestampString = "542657732.68543"
+            timestampString = "542658543.352511"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "4"
-            endingLineNumber = "4"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
             landmarkName = "MyShopModel"
             landmarkType = "3">
          </BreakpointContent>

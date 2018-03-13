@@ -100,7 +100,6 @@ final class ShopSignUpVC: UIViewController {
         }
     }
     
-
     @objc func screen1() {// selectorで呼び出す場合Swift4からは「@objc」をつける。
         button1.isEnabled = false
         guard let name = nameField.text,
