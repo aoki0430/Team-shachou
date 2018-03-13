@@ -1,18 +1,19 @@
 import SwiftyUserDefaults
-import KeychainAccess
+//import KeychainAccess
 
 extension DefaultsKeys {
     static let isShopAccount = DefaultsKey<Bool>("isShopAccount")
     static let isPrivateAccount = DefaultsKey<Bool>("isPrivateAccount")
     static let numberOfShop = DefaultsKey<Int>("numberOfShop")
-    static let id = DefaultsKey<Int>("id")
+    static let name = DefaultsKey<String?>("name")
+    static let pwd = DefaultsKey<String?>("pwd")
 }
 
 
 let endpoint = "url"
 
-let urlAuthSignUp = endpoint + "auth"
-let urlAuthSignIn = endpoint + "auth/sign_in"
+let urlAuthSignUp = "http://atukuri-mac.local:3000/consumers"
+//let urlAuthSignIn = endpoint + "auth/sign_in"
 //let urlAuthSignUpFB = endpoint + version + "auth/facebook"
 //let urlUser = endpoint + version + "user"
 //let urlAuthSignIn = endpoint + version + "auth/sign_in"
@@ -36,7 +37,7 @@ let urlAuthSignIn = endpoint + "auth/sign_in"
 //let urlGuestSearchShops = endpoint + version + "public/shops/search"
 //let urlShareLinks = endpoint + version + "share_links/"
 
-let keychain = Keychain(service: "com.teamshachou")
+//let keychain = Keychain(service: "com.teamshachou")
 //var accessToken: String? {
 //    get { return keychain["accessToken"] }
 //    set(value) { keychain["accessToken"] = value }
@@ -47,9 +48,9 @@ let keychain = Keychain(service: "com.teamshachou")
 //    set(value) { keychain["client"] = value }
 //}
 //
-var email: String? {
-    get { return keychain["email"] }
-    set(value) { keychain["email"] = value }
+//var email: String? {
+//    get { return keychain["email"] }
+//    set(value) { keychain["email"] = value }
 //}
 //
 //var latitude: Double? {
