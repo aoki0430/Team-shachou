@@ -22,7 +22,7 @@ final class ShopSignUpVC: UIViewController {
     
     let nameField: TextField = {
         let text = TextField(frame: .zero)
-        text.placeholder = "登録メールアドレス"
+        text.placeholder = "ショップ名"
         text.placeholderActiveColor = UIColor.white
         text.textAlignment = .center
         text.backgroundColor = UIColor.white
