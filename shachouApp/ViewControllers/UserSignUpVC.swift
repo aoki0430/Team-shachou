@@ -3,6 +3,8 @@ import SnapKit
 import Material
 
 final class UserSignUpVC: UIViewController {
+
+    var completion: (() -> Void)?
     
     let WelcomeView: UIImageView = {
         let view = UIImageView()
@@ -101,9 +103,9 @@ final class UserSignUpVC: UIViewController {
     }
     
     @objc func screen1() {// selectorで呼び出す場合Swift4からは「@objc」をつける。
-        button1.isEnabled = false
+        self.button1.isEnabled = false
         guard let name = nameField.text,
-            let pwd = pwdField.text else { button1.isEnabled = true; return }
+            let pwd = pwdField.text else { return }
         AuthModel().SignUp(name: name, pwd: pwd) { [weak self] success in
             if success {
                 let nextVC = TopVC()
@@ -112,8 +114,9 @@ final class UserSignUpVC: UIViewController {
                 self?.present(naviVC, animated: true, completion: nil)
             } else {
                 self?.button1.isEnabled = true
+
             }
-            
+        
         }
         
     }

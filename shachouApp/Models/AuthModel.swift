@@ -54,6 +54,7 @@ final class AuthModel {
             case let .success(value):
                 let json = JSON(value)
                 print(json)
+                completion(true)
 //                guard let allHeaderFields = response.response?.allHeaderFields else { return }
 //                let header = JSON(allHeaderFields)
 //                guard let email = json["data"]["email"].string else { return }
@@ -64,6 +65,7 @@ final class AuthModel {
                 
             case let .failure(error):
                 print(error)
+                completion(false)
             }
         }
     }
