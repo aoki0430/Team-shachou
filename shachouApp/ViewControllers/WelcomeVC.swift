@@ -53,6 +53,13 @@ import SnapKit
         button.addTarget(self, action: #selector(screen2), for: .touchUpInside)
         return button
     }()
+    
+    let shop: UIButton = {
+        let btn = UIButton()
+        btn.backgroundColor = .white
+        btn.addTarget(self, action: #selector(shopbtn), for: .touchUpInside)
+        return btn
+    }()
 
     override func viewDidLoad() {
         
@@ -62,6 +69,7 @@ import SnapKit
         self.view.addSubview(TeamlogoView)
         self.view.addSubview(button1)
         self.view.addSubview(button2)
+        self.view.addSubview(shop)
         
         self.view.backgroundColor = UIColor.white
         
@@ -96,6 +104,10 @@ import SnapKit
             $0.bottom.equalToSuperview().offset(-40)
             $0.centerX.equalToSuperview()
         }
+        
+        shop.snp.makeConstraints {
+            $0.center.equalToSuperview()
+        }
     }
     
 
@@ -111,6 +123,9 @@ import SnapKit
         self.present(nextvc, animated: true, completion: nil)
     }
 
+    @objc func shopbtn() {
+        self.present(ShopVC(), animated: true, completion: nil)
+    }
     override func didReceiveMemoryWarning(){
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can berecreated.

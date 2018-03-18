@@ -3,6 +3,8 @@ import SnapKit
 import Material
 
 final class UserSignUpVC: UIViewController {
+
+    var completion: (() -> Void)?
     
     let WelcomeView: UIImageView = {
         let view = UIImageView()
@@ -20,9 +22,9 @@ final class UserSignUpVC: UIViewController {
         return label
     }()
     
-    let mailField: TextField = {
+    let nameField: TextField = {
         let text = TextField(frame: .zero)
-        text.placeholder = "登録メールアドレス"
+        text.placeholder = "ユーザー名"
         text.placeholderActiveColor = UIColor.white
         text.textAlignment = .center
         text.backgroundColor = UIColor.white
@@ -33,7 +35,7 @@ final class UserSignUpVC: UIViewController {
         return text
     }()
     
-    let passwordField: TextField = {
+    let pwdField: TextField = {
         let text = TextField(frame: .zero)
         text.placeholder = "パスワード(8文字以上)"
         text.placeholderActiveColor = UIColor.white
@@ -62,8 +64,8 @@ final class UserSignUpVC: UIViewController {
         super.viewDidLoad()
         self.view.addSubview(WelcomeView)
         self.view.addSubview(label)
-        self.view.addSubview(mailField)
-        self.view.addSubview(passwordField)
+        self.view.addSubview(nameField)
+        self.view.addSubview(pwdField)
         self.view.addSubview(button1)
         
         
@@ -79,15 +81,15 @@ final class UserSignUpVC: UIViewController {
             $0.centerX.equalToSuperview()
         }
         
-        mailField.snp.makeConstraints {
+        nameField.snp.makeConstraints {
             $0.top.equalTo(label.snp.bottom).offset(60)
             $0.left.right.equalToSuperview().inset(33)
             $0.height.equalTo(40)
         }
         
-        passwordField.snp.makeConstraints {
-            $0.top.equalTo(mailField.snp.bottom).offset(40)
-            $0.left.right.equalTo(mailField)
+        pwdField.snp.makeConstraints {
+            $0.top.equalTo(nameField.snp.bottom).offset(40)
+            $0.left.right.equalTo(nameField)
             $0.height.equalTo(40)
         }
         
@@ -101,10 +103,22 @@ final class UserSignUpVC: UIViewController {
     }
     
     @objc func screen1() {// selectorで呼び出す場合Swift4からは「@objc」をつける。
-        let nextVC = TopVC()
-        let naviVC = UINavigationController(rootViewController: nextVC)
-        nextVC.view.backgroundColor = UIColor.white
-        self.present(naviVC, animated: true, completion: nil)
+        self.button1.isEnabled = false
+        guard let name = nameField.text,
+            let pwd = pwdField.text else { return }
+        AuthModel().SignUp(name: name, pwd: pwd) { [weak self] success in
+            if success {
+                let nextVC = TopVC()
+                let naviVC = UINavigationController(rootViewController: nextVC)
+                nextVC.view.backgroundColor = UIColor.white
+                self?.present(naviVC, animated: true, completion: nil)
+            } else {
+                self?.button1.isEnabled = true
+
+            }
+
+        }
+        
     }
  
     override func didReceiveMemoryWarning(){
