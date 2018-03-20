@@ -6,8 +6,21 @@
 //  Copyright © 2018年 Team-shachou. All rights reserved.
 //
 import UIKit
+import SnapKit
 
-class TopVC: UIViewController {
+final class TopVC: UIViewController {
+    
+    
+    private lazy var tebleView: UITableView = {
+        let tableView = UITableView()
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(TopCell.self, forCellReuseIdentifier: "TopCell")
+        tableView.estimatedRowHeight = 200
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.separatorStyle = .none
+        return tableView
+    }()
     
     let button1: UIButton = {
         let button = UIButton()
@@ -72,6 +85,21 @@ class TopVC: UIViewController {
         self.navigationController?.pushViewController(next2vc, animated: true)
         self.navigationItem.title = "お店リスト"
     }
+}
 
+extension TopVC: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.navigationController?.pushViewController(shopVC(index: indexPath.row), animated: true)
+    }
+    
+    func shopVC(index: Int) -> ShopVC {
+        let shopVC = ShopVC(
+            coder: shop(index: index).id
+        )
+    }
+    
+    func shop(index: Int) -> Shop {
+        return self.model.Shops[index]
+    }
 }
 
