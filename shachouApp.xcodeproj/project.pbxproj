@@ -23,7 +23,6 @@
 		FCE0EEE5203F141000A19FCF /* shachouAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE0EEE4203F141000A19FCF /* shachouAppUITests.swift */; };
 		FCE0EF9B2046A35100A19FCF /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE0EF9A2046A35100A19FCF /* Constant.swift */; };
 		FCE0EFA6204AFCE400A19FCF /* AuthModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE0EFA5204AFCE400A19FCF /* AuthModel.swift */; };
-		FCE0EFAA204BE6D600A19FCF /* MyShopPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE0EFA9204BE6D600A19FCF /* MyShopPresenter.swift */; };
 		FCE0EFAC204BE78700A19FCF /* MyShopModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE0EFAB204BE78700A19FCF /* MyShopModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -73,7 +72,6 @@
 		FCE0EEE6203F141000A19FCF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FCE0EF9A2046A35100A19FCF /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		FCE0EFA5204AFCE400A19FCF /* AuthModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthModel.swift; sourceTree = "<group>"; };
-		FCE0EFA9204BE6D600A19FCF /* MyShopPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyShopPresenter.swift; sourceTree = "<group>"; };
 		FCE0EFAB204BE78700A19FCF /* MyShopModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyShopModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -166,7 +164,6 @@
 		FCE0EEC3203F141000A19FCF /* shachouApp */ = {
 			isa = PBXGroup;
 			children = (
-				FCE0EFA22046C2A000A19FCF /* Presenters */,
 				FCE0EF9D2046B03900A19FCF /* Models */,
 				FCE0EECB203F141000A19FCF /* Assets.xcassets */,
 				FCE0EECD203F141000A19FCF /* LaunchScreen.storyboard */,
@@ -203,14 +200,6 @@
 				FCE0EFAB204BE78700A19FCF /* MyShopModel.swift */,
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		FCE0EFA22046C2A000A19FCF /* Presenters */ = {
-			isa = PBXGroup;
-			children = (
-				FCE0EFA9204BE6D600A19FCF /* MyShopPresenter.swift */,
-			);
-			path = Presenters;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -521,7 +510,6 @@
 			files = (
 				FC2F33B420584C7C00940ADC /* AppDelegate.swift in Sources */,
 				FCE0EFAC204BE78700A19FCF /* MyShopModel.swift in Sources */,
-				FCE0EFAA204BE6D600A19FCF /* MyShopPresenter.swift in Sources */,
 				FCE0EF9B2046A35100A19FCF /* Constant.swift in Sources */,
 				FCE0EFA6204AFCE400A19FCF /* AuthModel.swift in Sources */,
 				F4F499622046853100BE081A /* WelcomeVC.swift in Sources */,

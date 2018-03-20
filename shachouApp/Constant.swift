@@ -10,3 +10,4 @@ extension DefaultsKeys {
 }
 
 let urlAuthSignUp = "http://atukuri-mac.local:3000/api/consumers"
+let urlShops = ""
