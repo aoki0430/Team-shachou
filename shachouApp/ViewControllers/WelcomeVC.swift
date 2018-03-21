@@ -124,8 +124,13 @@ import SnapKit
     }
 
     @objc func shopbtn() {
-        self.present(ShopVC(), animated: true, completion: nil)
+//        self.present(ShopVC(shopID: 1), animated: true, completion: nil)
+        let nextVC = TopVC()
+        let naviVC = UINavigationController(rootViewController: nextVC)
+        nextVC.view.backgroundColor = UIColor.gray
+        self.present(naviVC, animated: true, completion: nil)
     }
+    
     override func didReceiveMemoryWarning(){
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can berecreated.

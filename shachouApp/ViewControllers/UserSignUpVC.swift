@@ -105,7 +105,7 @@ final class UserSignUpVC: UIViewController {
     @objc func screen1() {// selectorで呼び出す場合Swift4からは「@objc」をつける。
         self.button1.isEnabled = false
         guard let name = nameField.text,
-            let pwd = pwdField.text else { return }
+            let pwd = pwdField.text else { self.button1.isEnabled = true; return }
         AuthModel().SignUp(name: name, pwd: pwd) { [weak self] success in
             if success {
                 let nextVC = TopVC()

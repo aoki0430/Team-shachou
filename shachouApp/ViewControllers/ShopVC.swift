@@ -1,6 +1,17 @@
 import UIKit
 
 class ShopVC: UIViewController {
+    let model : ShopModel
+    
+    init(shopID: Int) {
+        model = ShopModel(shopID)
+        super.init(nibName: nil, bundle: nil)
+        self.view.backgroundColor = .white
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     let ImageBackView: UIView = {
         let view = UIView()
@@ -11,7 +22,7 @@ class ShopVC: UIViewController {
     
     let ShopNameLabel: UILabel = {
         let label = UILabel()
-        label.text = "お店１"
+//        label.text = "お店１"
         label.textAlignment = .center
         label.layer.cornerRadius = 4
         label.backgroundColor = UIColor.white
@@ -20,7 +31,7 @@ class ShopVC: UIViewController {
     
     let ShopCallLabel: UILabel = {
         let label = UILabel()
-        label.text = "電話:0120-117-117"
+//        label.text = "電話:0120-117-117"
         label.textAlignment = .center
         label.layer.cornerRadius = 4
         label.backgroundColor = UIColor.white
@@ -29,7 +40,7 @@ class ShopVC: UIViewController {
     
     let ShopAccessLabel: UILabel = {
         let label = UILabel()
-        label.text = "住所:東京都調布市調布ヶ丘１"
+//        label.text = "住所:東京都調布市調布ヶ丘１"
         label.textAlignment = .center
         label.layer.cornerRadius = 4
         label.backgroundColor = UIColor.white
@@ -39,7 +50,7 @@ class ShopVC: UIViewController {
     let ShopInfoLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 2
-        label.text = "詳細:チェックシャツの\n洋服をたくさん売っているお店です"
+//        label.text = "詳細:チェックシャツの\n洋服をたくさん売っているお店です"
         label.textAlignment = .center
         label.layer.cornerRadius = 4
         label.backgroundColor = UIColor.white
@@ -51,12 +62,13 @@ class ShopVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.fetchShop()
         self.view.addSubview(ImageBackView)
         self.view.addSubview(ShopNameLabel)
         self.view.addSubview(ShopCallLabel)
         self.view.addSubview(ShopAccessLabel)
         self.view.addSubview(ShopInfoLabel)
-        self.navigationItem.title = "お店1" //JSON形式でお店の名前欲しい
+        self.navigationItem.title = self.model.shop.shopname //JSON形式でお店の名前欲しい
         
         ImageBackView.snp.makeConstraints{
             $0.height.equalTo(300)
@@ -87,10 +99,14 @@ class ShopVC: UIViewController {
             $0.width.equalToSuperview()
             $0.top.equalTo(ShopAccessLabel.snp.bottom).offset(2)
         }
-        
-        
-        
-        
+
+    }
+    
+    func fetchShop() {
+        self.ShopNameLabel.text = self.model.shop.shopname
+        self.ShopInfoLabel.text = self.model.shop.text
+        self.ShopAccessLabel.text = self.model.shop.addr
+        self.ShopCallLabel.text = self.model.shop.tel
     }
     
     override func didReceiveMemoryWarning() {

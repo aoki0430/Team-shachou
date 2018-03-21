@@ -12,7 +12,7 @@ target 'shachouApp' do
 #    pod 'Kingfisher'
     # JSONパーサ
     pod 'SwiftyJSON'
-    
+
     # マテリアルデザイン用のコンポーネント用のライブラリ
     pod 'Material', '~> 2.0'
 
@@ -26,6 +26,8 @@ target 'shachouApp' do
 
     # UserDefaults
     pod 'SwiftyUserDefaults'
+
+    pod 'Kingfisher'
 
   end
 
