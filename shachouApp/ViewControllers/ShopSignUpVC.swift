@@ -2,7 +2,7 @@ import UIKit
 import SnapKit
 import Material
 
-final class ShopSignUpVC: UIViewController {
+final class ShopSignUpVC: UIViewController {    
     
     let WelcomeView: UIImageView = {
         let view = UIImageView()
