@@ -6,6 +6,7 @@
 //  Copyright © 2018年 Team-shachou. All rights reserved.
 //
 import UIKit
+import SnapKit
 
 class TopVC: UIViewController {
     

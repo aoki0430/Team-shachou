@@ -102,24 +102,29 @@ final class UserSignUpVC: UIViewController {
         }
     }
     
+//    @objc func screen1() {// selectorで呼び出す場合Swift4からは「@objc」をつける。
+//        self.button1.isEnabled = false
+//        guard let name = nameField.text,
+//            let pwd = pwdField.text else { return }
+//        AuthModel().SignUp(name: name, pwd: pwd) { [weak self] success in
+//            if success {
+//                let nextVC = TopVC()
+//                let naviVC = UINavigationController(rootViewController: nextVC)
+//                nextVC.view.backgroundColor = UIColor.white
+//                self?.present(naviVC, animated: true, completion: nil)
+//            } else {
+//                self?.button1.isEnabled = true
+//            }
+//        }
+//    }
+    
     @objc func screen1() {// selectorで呼び出す場合Swift4からは「@objc」をつける。
-        self.button1.isEnabled = false
-        guard let name = nameField.text,
-            let pwd = pwdField.text else { return }
-        AuthModel().SignUp(name: name, pwd: pwd) { [weak self] success in
-            if success {
-                let nextVC = TopVC()
-                let naviVC = UINavigationController(rootViewController: nextVC)
-                nextVC.view.backgroundColor = UIColor.white
-                self?.present(naviVC, animated: true, completion: nil)
-            } else {
-                self?.button1.isEnabled = true
-
-            }
-        
-        }
-        
+        let nextVC = TopVC()
+        let naviVC = UINavigationController(rootViewController: nextVC)
+        nextVC.view.backgroundColor = UIColor.white
+        self.present(naviVC, animated: true, completion: nil)
     }
+
  
     override func didReceiveMemoryWarning(){
         super.didReceiveMemoryWarning()
