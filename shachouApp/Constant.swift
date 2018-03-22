@@ -1,5 +1,4 @@
 import SwiftyUserDefaults
-//import KeychainAccess
 
 extension DefaultsKeys {
     static let isShopAccount = DefaultsKey<Bool>("isShopAccount")
@@ -10,3 +9,6 @@ extension DefaultsKeys {
 }
 
 let urlAuthSignUp = "http://atukuri-mac.local:3000/api/consumers"
+let urltopmodel = "http://atukuri-mac.local:3000/shop/index"
+let urlshopmodel = ""
+
