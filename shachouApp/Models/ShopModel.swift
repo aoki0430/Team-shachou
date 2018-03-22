@@ -5,6 +5,7 @@ import SwiftyJSON
 final class ShopModel {
     let shopID: Int
     var shop = Shop()
+    var shops = [Shop]()
     
     init(_ shopID: Int) {
         self.shopID = shopID
@@ -20,9 +21,13 @@ final class ShopModel {
                 print("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@")
                 print(json)
                 print("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@")
-                
-                strongSelf.shop = Shop(json)
-                strongSelf.shop.text = json["text"].stringValue
+                strongSelf.shops.removeAll()
+                json.arrayValue.forEach { json in
+                    strongSelf.shops.append(Shop(json))
+                }
+                if let shops = self?.shops, let shopID = self?.shopID {
+                    strongSelf.shop = shops[shopID]
+                }
                 completion()
             case let .failure(error):
                 print(error)
