@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '7EB489A5E071D44F34EC9D07A32337F6'
-               BlueprintName = 'SwiftyUserDefaults'
+               BlueprintIdentifier = '0CC72CCFA99B9E8D5971AE6C759D4549'
+               BlueprintName = 'Motion'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'SwiftyUserDefaults.framework'>
+               BuildableName = 'Motion.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

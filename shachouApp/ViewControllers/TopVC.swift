@@ -1,64 +1,64 @@
-//
-//  TopVC.swift
-//  shachouApp
-//
-//  Created by 相楽昌希 on 2018/03/07.
-//  Copyright © 2018年 Team-shachou. All rights reserved.
-//
 import UIKit
+import SnapKit
 
-class TopVC: UIViewController {
+final class TopVC: UIViewController {
     
-    let button1: UIButton = {
-        let button = UIButton()
-        button.backgroundColor = UIColor.brown
-        button.setTitle("お店１", for: [])
-        button.titleLabel?.font = .systemFont(ofSize: 20, weight: UIFont.Weight(rawValue: 1))
-        button.addTarget(self, action: #selector(goNext), for: .touchUpInside)
-        return button
-    }()
+    let model = TopModel()
     
-    let button2: UIButton = {
-        let button = UIButton()
-        button.backgroundColor = UIColor.brown
-        button.setTitle("お店2", for: [])
-        button.titleLabel?.font = .systemFont(ofSize: 20, weight: UIFont.Weight(rawValue: 1))
-        button.addTarget(self, action: #selector(goNext), for: .touchUpInside)
-        return button
-    }()
+    var numOfShop: Int {
+        return model.shops.count
+    }
     
-    let button3: UIButton = {
-        let button = UIButton()
-        button.backgroundColor = UIColor.brown
-        button.setTitle("お店3", for: [])
-        button.titleLabel?.font = .systemFont(ofSize: 20, weight: UIFont.Weight(rawValue: 1))
-        button.addTarget(self, action: #selector(goNext), for: .touchUpInside)
-        return button
-    }()
+    //    private lazy var tebleView: UITableView = {
+    //        let tableView = UITableView()
+    //        tableView.delegate = self
+    //        tableView.dataSource = self
+    //        tableView.register(TopCell.self, forCellReuseIdentifier: "TopCell")
+    //        tableView.estimatedRowHeight = 200
+    //        tableView.rowHeight = UITableViewAutomaticDimension
+    //        tableView.separatorStyle = .none
+    //        return tableView
+    //    }()
+    //何故か動かない！！！！！Fuxx！！！！
+    init() {
+        super.init(nibName: nil, bundle: nil)
+    }
     
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.addSubview(button1)
-        self.view.addSubview(button2)
-        self.view.addSubview(button3)
         
-        button1.snp.makeConstraints{
-            $0.height.equalTo(70)
-            $0.width.equalToSuperview()
-            $0.top.equalToSuperview().offset(70)
+        tableView = UITableView()
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(TopCell.self, forCellReuseIdentifier: "TopCell")
+        tableView.rowHeight = UITableViewAutomaticDimension
+        //        tableView.estimatedRowHeight =
+        tableView.separatorStyle = .none
+        
+        self.tableView.reloadData()
+        self.model.getShopInfo {
+            self.tableView.reloadData()
         }
+        print(model.shops)
         
-        button2.snp.makeConstraints{
-            $0.height.equalTo(70)
-            $0.width.equalToSuperview()
-            $0.top.equalTo(button1.snp.bottom).offset(5)
+        self.view.addSubview(tableView)
+        tableView.snp.makeConstraints {
+            $0.edges.equalToSuperview()
         }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
-        button3.snp.makeConstraints{
-            $0.height.equalTo(70)
-            $0.width.equalToSuperview()
-            $0.top.equalTo(button2.snp.bottom).offset(5)
+        //選択されたセルのハイライトを解除
+        if (self.tableView.indexPathForSelectedRow != nil) {
+            self.tableView.deselectRow(at: self.tableView.indexPathForSelectedRow!, animated: true)
         }
     }
     
@@ -66,12 +66,48 @@ class TopVC: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
-    @objc func goNext(_ sender: UIButton) {
-        let next2vc = ShopVC()
-        next2vc.view.backgroundColor = UIColor.gray
-        self.navigationController?.pushViewController(next2vc, animated: true)
-        self.navigationItem.title = "お店リスト"
+    func fetch() {
+        self.model.getShopInfo{
+            self.tableView.reloadData()
+        }
     }
-
+    
+    func shopVC(index: Int) -> ShopVC {
+        let shopVC = ShopVC(shopID: self.model.shops[index].id)
+        return shopVC
+    }
 }
 
+extension TopVC: UITableViewDataSource {
+    
+    
+    func numberOfSections(in _: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_: UITableView, numberOfRowsInSection section: Int) -> Int {
+        print(numOfShop)
+        return numOfShop
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TopCell") as! TopCell
+        
+        cell.configure(self.model.shops[indexPath.row]) { image in
+            if let image = image {
+                self.model.shops[indexPath.row].image = image
+            }
+        }
+        return cell
+    }
+}
+
+extension TopVC: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let nextVC = self.shopVC(index: indexPath.row)
+        let naviVC = UINavigationController(rootViewController: nextVC)
+        nextVC.view.backgroundColor = UIColor.gray
+        self.present(naviVC, animated: true, completion: nil)
+    }
+}

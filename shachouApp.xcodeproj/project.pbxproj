@@ -24,7 +24,10 @@
 		FCE0EF9B2046A35100A19FCF /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE0EF9A2046A35100A19FCF /* Constant.swift */; };
 		FCE0EFA6204AFCE400A19FCF /* AuthModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE0EFA5204AFCE400A19FCF /* AuthModel.swift */; };
 		FCE0EFAA204BE6D600A19FCF /* MyShopPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE0EFA9204BE6D600A19FCF /* MyShopPresenter.swift */; };
-		FCE0EFAC204BE78700A19FCF /* MyShopModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE0EFAB204BE78700A19FCF /* MyShopModel.swift */; };
+		FCF09BF2206293FB009C0289 /* ShopModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF09BF1206293FB009C0289 /* ShopModel.swift */; };
+		FCF09BF420633997009C0289 /* Shop.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF09BF320633997009C0289 /* Shop.swift */; };
+		FCF09BF620633A01009C0289 /* TopModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF09BF520633A01009C0289 /* TopModel.swift */; };
+		FCF09BF820633A50009C0289 /* TopCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF09BF720633A50009C0289 /* TopCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,7 +77,10 @@
 		FCE0EF9A2046A35100A19FCF /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		FCE0EFA5204AFCE400A19FCF /* AuthModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthModel.swift; sourceTree = "<group>"; };
 		FCE0EFA9204BE6D600A19FCF /* MyShopPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyShopPresenter.swift; sourceTree = "<group>"; };
-		FCE0EFAB204BE78700A19FCF /* MyShopModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyShopModel.swift; sourceTree = "<group>"; };
+		FCF09BF1206293FB009C0289 /* ShopModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopModel.swift; sourceTree = "<group>"; };
+		FCF09BF320633997009C0289 /* Shop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shop.swift; sourceTree = "<group>"; };
+		FCF09BF520633A01009C0289 /* TopModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopModel.swift; sourceTree = "<group>"; };
+		FCF09BF720633A50009C0289 /* TopCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +143,7 @@
 				F4F4996B204FC6DB00BE081A /* ShopVC.swift */,
 				F4F499632046C0FA00BE081A /* ShopSignUpVC.swift */,
 				F4F49969204FC6BA00BE081A /* MyShopVC.swift */,
+				FCF09BF720633A50009C0289 /* TopCell.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -174,6 +181,7 @@
 				FC2F33B320584C7C00940ADC /* AppDelegate.swift */,
 				F4F4996020466FCE00BE081A /* ViewControllers */,
 				FCE0EF9A2046A35100A19FCF /* Constant.swift */,
+				FCF09BF320633997009C0289 /* Shop.swift */,
 			);
 			path = shachouApp;
 			sourceTree = "<group>";
@@ -200,7 +208,8 @@
 			isa = PBXGroup;
 			children = (
 				FCE0EFA5204AFCE400A19FCF /* AuthModel.swift */,
-				FCE0EFAB204BE78700A19FCF /* MyShopModel.swift */,
+				FCF09BF1206293FB009C0289 /* ShopModel.swift */,
+				FCF09BF520633A01009C0289 /* TopModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -409,6 +418,7 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/DKImagePickerController/DKImagePickerController.framework",
 				"${BUILT_PRODUCTS_DIR}/GrowingTextView/GrowingTextView.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/Material/Material.framework",
 				"${BUILT_PRODUCTS_DIR}/Motion/Motion.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
@@ -420,6 +430,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DKImagePickerController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GrowingTextView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Material.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Motion.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
@@ -520,12 +531,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				FC2F33B420584C7C00940ADC /* AppDelegate.swift in Sources */,
-				FCE0EFAC204BE78700A19FCF /* MyShopModel.swift in Sources */,
 				FCE0EFAA204BE6D600A19FCF /* MyShopPresenter.swift in Sources */,
 				FCE0EF9B2046A35100A19FCF /* Constant.swift in Sources */,
+				FCF09BF420633997009C0289 /* Shop.swift in Sources */,
+				FCF09BF620633A01009C0289 /* TopModel.swift in Sources */,
+				FCF09BF820633A50009C0289 /* TopCell.swift in Sources */,
 				FCE0EFA6204AFCE400A19FCF /* AuthModel.swift in Sources */,
 				F4F499622046853100BE081A /* WelcomeVC.swift in Sources */,
 				F4F4996C204FC6DB00BE081A /* ShopVC.swift in Sources */,
+				FCF09BF2206293FB009C0289 /* ShopModel.swift in Sources */,
 				F4F499642046C0FA00BE081A /* ShopSignUpVC.swift in Sources */,
 				F4F4996A204FC6BA00BE081A /* MyShopVC.swift in Sources */,
 				F4F49968204FC68700BE081A /* TopVC.swift in Sources */,
