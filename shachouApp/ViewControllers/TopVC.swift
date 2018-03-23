@@ -86,7 +86,6 @@ extension TopVC: UITableViewDataSource {
     }
     
     func tableView(_: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print(numOfShop)
         return numOfShop
     }
     
