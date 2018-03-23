@@ -105,7 +105,7 @@ extension TopVC: UITableViewDataSource {
 
 extension TopVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let nextVC = self.shopVC(index: indexPath.row)
+        let nextVC = self.shopVC(index: indexPath.row - 1)
         let naviVC = UINavigationController(rootViewController: nextVC)
         nextVC.view.backgroundColor = UIColor.gray
         self.present(naviVC, animated: true, completion: nil)

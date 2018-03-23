@@ -13,7 +13,7 @@ final class ShopModel {
     
     func fetchShop(completion: @escaping () -> Void) {
         
-        Alamofire.request(urlshopmodel, method: .get).validate().responseJSON { [weak self] response in
+        Alamofire.request(urltopmodel, method: .get).validate().responseJSON { [weak self] response in
             guard let strongSelf = self else { return }
             switch response.result {
             case let .success(value):

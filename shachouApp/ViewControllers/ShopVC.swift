@@ -13,8 +13,8 @@ class ShopVC: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    let ImageBackView: UIView = {
-        let view = UIView()
+    let ImageView: UIImageView = {
+        let view = UIImageView()
         view.layer.cornerRadius = 4
         view.backgroundColor = UIColor.white
         return view
@@ -63,14 +63,14 @@ class ShopVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.fetchShop()
-        self.view.addSubview(ImageBackView)
+        self.view.addSubview(ImageView)
         self.view.addSubview(ShopNameLabel)
         self.view.addSubview(ShopCallLabel)
         self.view.addSubview(ShopAccessLabel)
         self.view.addSubview(ShopInfoLabel)
         self.navigationItem.title = self.model.shop.shopname //JSON形式でお店の名前欲しい
         
-        ImageBackView.snp.makeConstraints{
+        ImageView.snp.makeConstraints{
             $0.height.equalTo(300)
             $0.width.equalToSuperview()
             $0.top.equalToSuperview().offset(65)
@@ -79,7 +79,7 @@ class ShopVC: UIViewController {
         ShopNameLabel.snp.makeConstraints{
             $0.height.equalTo(70)
             $0.width.equalToSuperview()
-            $0.top.equalTo(ImageBackView.snp.bottom).offset(2)
+            $0.top.equalTo(ImageView.snp.bottom).offset(2)
         }
         
         ShopCallLabel.snp.makeConstraints{
@@ -104,6 +104,8 @@ class ShopVC: UIViewController {
     
     func fetchShop() {
         self.model.fetchShop {
+            let url = URL(string: self.model.shop.image)
+            self.ImageView.kf.setImage(with: url)
             self.ShopNameLabel.text = self.model.shop.shopname
             self.ShopInfoLabel.text = self.model.shop.text
             self.ShopAccessLabel.text = self.model.shop.addr
