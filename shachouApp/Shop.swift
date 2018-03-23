@@ -24,3 +24,21 @@ struct Shop {
     }
 }
 
+struct Item {
+    var shop_id = 0
+    var itemname = ""
+    var itemtext = ""
+    var size = ""
+    var itemimage = ""
+    
+    init() {
+    }
+    
+    init(_ json: JSON) {
+        shop_id = json["shop_id"].intValue
+        itemname = json["itemname"].stringValue
+        itemtext = json["itemtext"].stringValue
+        size = json["size"].stringValue
+        itemimage = json["itemimage"].stringValue
+    }
+}
