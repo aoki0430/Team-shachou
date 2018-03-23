@@ -73,7 +73,7 @@ final class TopVC: UIViewController {
     }
     
     func shopVC(index: Int) -> ShopVC {
-        let shopVC = ShopVC(shopID: self.model.shops[index].id)
+        let shopVC = ShopVC(shopID: self.model.shops[index].id - 1)
         return shopVC
     }
 }
@@ -105,7 +105,7 @@ extension TopVC: UITableViewDataSource {
 
 extension TopVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let nextVC = self.shopVC(index: indexPath.row - 1)
+        let nextVC = self.shopVC(index: indexPath.row)
         let naviVC = UINavigationController(rootViewController: nextVC)
         nextVC.view.backgroundColor = UIColor.gray
         self.present(naviVC, animated: true, completion: nil)
