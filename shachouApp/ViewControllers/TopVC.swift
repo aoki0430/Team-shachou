@@ -38,7 +38,7 @@ final class TopVC: UIViewController {
         tableView.dataSource = self
         tableView.register(TopCell.self, forCellReuseIdentifier: "TopCell")
         tableView.rowHeight = UITableViewAutomaticDimension
-        //        tableView.estimatedRowHeight =
+        tableView.estimatedRowHeight = 200
         tableView.separatorStyle = .none
         
         self.tableView.reloadData()
@@ -86,12 +86,11 @@ extension TopVC: UITableViewDataSource {
     }
     
     func tableView(_: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print(numOfShop)
         return numOfShop
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
+
         let cell = tableView.dequeueReusableCell(withIdentifier: "TopCell") as! TopCell
         
         cell.configure(self.model.shops[indexPath.row]) { image in
