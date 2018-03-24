@@ -13,35 +13,6 @@ final class ShopModel {
         self.shopID = shopID
     }
     
-    func sendShopInfo(shopname: String,
-                      address: String,
-                      tel: Int,
-                      text: String,
-                      Image: URL,
-                      completion: @escaping (_ success: Bool) -> Void) {
-        
-        let params = [
-            "shopname": shopname,
-            "addr": address,
-            "tel": tel,
-            "text": text,
-            "image": Image,
-            ] as [String : Any]
-        
-        Alamofire.request(urlEditShop, method: .post, parameters: params).responseJSON { response in
-            switch response.result {
-            case let .success(value):
-                let json  = JSON(value)
-                print(json)
-                completion(true)
-                
-            case let .failure(error):
-                print(error)
-                completion(false)
-            }
-        }
-    }
-    
     func fetchShop(completion: @escaping () -> Void) {
         let url = urlshop + "/\(shopID)"
         Alamofire.request(url, method: .get).validate().responseJSON { [weak self] response in
@@ -65,6 +36,42 @@ final class ShopModel {
                 print(error)
             }
         }
+    }
+    
+    func Editshop(shopname: String,
+                  address: String,
+                  tel: String,
+                  text: String,
+                  image: UIImage,
+                  completion: @escaping () -> Void) {
+        
+        guard let data = UIImagePNGRepresentation(image) else { return }
+        
+        Alamofire.upload(
+            multipartFormData: { multipartFormData in
+                // 送信する値の指定をここでします
+                multipartFormData.append(data, withName: "image", fileName: "image", mimeType: "image/png")
+                multipartFormData.append(shopname.data(using: String.Encoding.utf8)!, withName: "shopname")
+                multipartFormData.append(address.data(using: String.Encoding.utf8)!, withName: "addr")
+                multipartFormData.append(tel.data(using: String.Encoding.utf8)!, withName: "tel")
+                multipartFormData.append(text.data(using: String.Encoding.utf8)!, withName: "text")
+        },
+            
+            to: urlEditItem,
+            encodingCompletion: { encodingResult in
+                switch encodingResult {
+                case .success(let upload, _, _):
+                    upload.responseJSON { response in
+                        // 成功
+                        let responseData = response
+                        print(responseData )
+                    }
+                case .failure(let encodingError):
+                    // 失敗
+                    print(encodingError)
+                }
+        }
+        )
     }
     
     func getAllItem(completion: @escaping ()->Void) {

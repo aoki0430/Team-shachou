@@ -10,6 +10,37 @@ final class ItemModel {
         self.shop_id = shopID
     }
     
+    func EditItem(image: UIImage, itemname: String, itemtext: String, size:String) {
+        
+        guard let data = UIImagePNGRepresentation(image) else { return }
+        
+        Alamofire.upload(
+            multipartFormData: { multipartFormData in
+                // 送信する値の指定をここでします
+                multipartFormData.append(data, withName: "itemimage", fileName: "itemimage", mimeType: "image/png")
+                multipartFormData.append(itemname.data(using: String.Encoding.utf8)!, withName: "itemname")
+                multipartFormData.append(itemtext.data(using: String.Encoding.utf8)!, withName: "itemtext")
+                multipartFormData.append(size.data(using: String.Encoding.utf8)!, withName: "size")
+                
+        },
+            
+            to: urlEditItem,
+            encodingCompletion: { encodingResult in
+                switch encodingResult {
+                case .success(let upload, _, _):
+                    upload.responseJSON { response in
+                        // 成功
+                        let responseData = response
+                        print(responseData )
+                    }
+                case .failure(let encodingError):
+                    // 失敗
+                    print(encodingError)
+                }
+            }
+        )
+    }
+    
     func getItemInfo(completion: @escaping ()->Void) {
         let url = urlitem + "/\(shop_id)"
         Alamofire.request(url, method: .get).responseJSON { [weak self] response in
