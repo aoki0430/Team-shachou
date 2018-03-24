@@ -29,6 +29,7 @@
 		FCF09BF620633A01009C0289 /* TopModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF09BF520633A01009C0289 /* TopModel.swift */; };
 		FCF09BF820633A50009C0289 /* TopCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF09BF720633A50009C0289 /* TopCell.swift */; };
 		FCF09BFA20654B8A009C0289 /* ItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF09BF920654B8A009C0289 /* ItemModel.swift */; };
+		FCF09BFC20668A4D009C0289 /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF09BFB20668A4D009C0289 /* PhotoCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +84,7 @@
 		FCF09BF520633A01009C0289 /* TopModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopModel.swift; sourceTree = "<group>"; };
 		FCF09BF720633A50009C0289 /* TopCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopCell.swift; sourceTree = "<group>"; };
 		FCF09BF920654B8A009C0289 /* ItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemModel.swift; sourceTree = "<group>"; };
+		FCF09BFB20668A4D009C0289 /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +148,7 @@
 				F4F499632046C0FA00BE081A /* ShopSignUpVC.swift */,
 				F4F49969204FC6BA00BE081A /* MyShopVC.swift */,
 				FCF09BF720633A50009C0289 /* TopCell.swift */,
+				FCF09BFB20668A4D009C0289 /* PhotoCell.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -537,6 +540,7 @@
 				FC2F33B420584C7C00940ADC /* AppDelegate.swift in Sources */,
 				FCE0EFAA204BE6D600A19FCF /* MyShopPresenter.swift in Sources */,
 				FCE0EF9B2046A35100A19FCF /* Constant.swift in Sources */,
+				FCF09BFC20668A4D009C0289 /* PhotoCell.swift in Sources */,
 				FCF09BF420633997009C0289 /* Shop.swift in Sources */,
 				FCF09BF620633A01009C0289 /* TopModel.swift in Sources */,
 				FCF09BF820633A50009C0289 /* TopCell.swift in Sources */,
