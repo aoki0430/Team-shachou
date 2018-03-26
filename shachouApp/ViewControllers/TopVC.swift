@@ -45,6 +45,7 @@ final class TopVC: UIViewController {
         self.model.getShopInfo {
             self.tableView.reloadData()
         }
+        
         print(model.shops)
         
         self.view.addSubview(tableView)
