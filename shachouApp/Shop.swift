@@ -41,6 +41,6 @@ struct Item {
         itemname = json["itemname"].stringValue
         itemtext = json["itemtext"].stringValue
         size = json["size"].stringValue
-        image = json["image"].stringValue
+        image = json["image"]["url"].stringValue
     }
 }

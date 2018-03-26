@@ -78,6 +78,7 @@ final class ShopModel {
         let url = urlGetAllItem + "/\(shopID)"
         Alamofire.request(url, method: .get).responseJSON { [weak self] response in
             guard let strongSelf = self else { return }
+            strongSelf.items.removeAll()
             switch response.result {
             case let .success(value) :
                 let json = JSON(value)

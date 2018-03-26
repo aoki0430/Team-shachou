@@ -1,4 +1,5 @@
 import UIKit
+import SnapKit
 import Kingfisher
 
 final class PhotoCell: UICollectionViewCell {
@@ -15,8 +16,11 @@ final class PhotoCell: UICollectionViewCell {
         super.init(frame: .zero)
         self.addSubview(imageView)
         self.backgroundColor = .white
-        
         self.clipsToBounds = true
+        
+        self.imageView.snp.makeConstraints {
+            $0.edges.equalToSuperview()
+        }
     }
     
     required init?(coder _: NSCoder) {
@@ -51,6 +55,7 @@ final class PhotoCell: UICollectionViewCell {
 //        photoIV.image = UIImage(named: "nophoto")
 //        photoIV.layer.cornerRadius = 0
 //        photoIV.layer.masksToBounds = true
+        self.imageView.contentMode = .scaleAspectFill
         
         if item.image != "" {
             let url = URL(string: item.image)
@@ -58,8 +63,8 @@ final class PhotoCell: UICollectionViewCell {
             imageView.kf.setImage(with: url)
             imageView.layer.cornerRadius = 5
             imageView.layer.masksToBounds = true
-            imageView.image = imageView.image?.resize(toWidth: 80)
-            imageView.image = imageView.image?.resize(toHeight: 80)
+//            imageView.image = imageView.image?.resize(toWidth: 80)
+//            imageView.image = imageView.image?.resize(toHeight: 80)
         }
         
         self.setNeedsLayout()

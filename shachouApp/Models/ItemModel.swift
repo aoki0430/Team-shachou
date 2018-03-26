@@ -17,7 +17,7 @@ final class ItemModel {
         Alamofire.upload(
             multipartFormData: { multipartFormData in
                 // 送信する値の指定をここでします
-                multipartFormData.append(data, withName: "image", fileName: "itemimage", mimeType: "image/png")
+                multipartFormData.append(data, withName: "image", fileName: "image", mimeType: "image/png")
                 multipartFormData.append(itemname.data(using: String.Encoding.utf8)!, withName: "itemname")
                 multipartFormData.append(itemtext.data(using: String.Encoding.utf8)!, withName: "itemtext")
                 multipartFormData.append(size.data(using: String.Encoding.utf8)!, withName: "size")

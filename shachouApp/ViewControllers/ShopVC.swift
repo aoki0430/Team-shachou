@@ -5,6 +5,9 @@ class ShopVC: UIViewController {
     let model : ShopModel
     
     var images:[UIImage] = []
+    var numOfItem: Int {
+        return model.items.count
+    }
     
     init(shopID: Int) {
         model = ShopModel(shopID)
@@ -29,23 +32,36 @@ class ShopVC: UIViewController {
         return view
     }()
     
+    let collectionBackgroungView: UIView = {
+        let view = UIView()
+        view.layer.cornerRadius = 4
+        view.backgroundColor = .white
+        //以下影（shadow）
+        view.shadowColor = .black
+        view.layer.shadowRadius = 4
+        view.layer.shadowOpacity = 0.1
+        view.layer.shadowOffset = CGSize(width: 0, height: 3)
+        return view
+    }()
+    
     let imageCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
-        let size = UIScreen.main.bounds.size.width / 3 - 1
-        layout.itemSize = CGSize(width: size,height: size+22)
-        layout.minimumLineSpacing = 5
-        layout.minimumInteritemSpacing = 0
+        let size = (UIScreen.main.bounds.size.width / 2) - 5
+        layout.itemSize = CGSize(width:size ,height: 200)
+        let margin: CGFloat = 3.0
+        layout.minimumLineSpacing = margin
+        layout.minimumInteritemSpacing = margin
+        layout.sectionInset = UIEdgeInsets(top: margin, left: margin, bottom: margin, right: margin)
         layout.scrollDirection = .vertical
-        
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.backgroundColor = .white
-        
+//        frame : .zero
         //以下影（shadow）
         collectionView.shadowColor = .black
         collectionView.layer.shadowRadius = 4
         collectionView.layer.shadowOpacity = 0.1
         collectionView.layer.shadowOffset = CGSize(width: 0, height: 3)
-        
+
         return collectionView
     }()
     
@@ -56,6 +72,18 @@ class ShopVC: UIViewController {
         label.layer.cornerRadius = 4
         label.backgroundColor = UIColor.white
         return label
+    }()
+    
+    let InfoView: UIView = {
+        let view = UIView()
+        view.layer.cornerRadius = 2
+        view.backgroundColor = .white
+        //以下影（shadow）
+        view.shadowColor = .black
+        view.layer.shadowRadius = 2
+        view.layer.shadowOpacity = 0.1
+        view.layer.shadowOffset = CGSize(width: 0, height: 3)
+        return view
     }()
     
     let ShopCallLabel: UILabel = {
@@ -87,38 +115,55 @@ class ShopVC: UIViewController {
     }()
     
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.fetchShop()
+        
         self.imageCollectionView.delegate = self
         self.imageCollectionView.dataSource = self
         self.imageCollectionView.register(PhotoCell.self, forCellWithReuseIdentifier: "PhotoCell")
+        
+         self.fetchShop()
         self.view.addSubview(scrollView)
         self.scrollView.addSubview(ImageView)
-        self.scrollView.addSubview(ShopNameLabel)
-        self.scrollView.addSubview(ShopCallLabel)
-//        self.view.addSubview(ShopAccessLabel)
-//        self.view.addSubview(ShopInfoLabel)
-        self.scrollView.addSubview(imageCollectionView)
-        self.navigationItem.title = self.model.shop.shopname //JSON形式でお店の名前欲しい
+        self.scrollView.addSubview(self.collectionBackgroungView)
+        self.scrollView.addSubview(self.InfoView)
+        self.collectionBackgroungView.addSubview(self.imageCollectionView)
+        self.InfoView.addSubview(ShopNameLabel)
+        self.InfoView.addSubview(ShopCallLabel)
+        self.InfoView.addSubview(ShopAccessLabel)
+        self.InfoView.addSubview(ShopInfoLabel)
+        self.title = self.model.shop.shopname //JSON形式でお店の名前欲しい
         scrollView.snp.makeConstraints {
+            
             $0.width.equalToSuperview()
-            $0.top.equalToSuperview()
+            
+            let statusBarHeight = UIApplication.shared.statusBarFrame.size.height
+            $0.top.equalToSuperview().inset(-(statusBarHeight + 44))
             $0.left.right.bottom.equalToSuperview()
         }
         
+        
         ImageView.snp.makeConstraints{
-            $0.height.equalTo(300)
             $0.width.equalToSuperview()
-            $0.top.equalToSuperview().offset(65)
+            $0.top.left.right.equalToSuperview()
+            $0.height.equalTo(150)
+        }
+        
+        collectionBackgroungView.snp.remakeConstraints {
+            $0.top.equalTo(self.ImageView.snp.bottom).offset(10)
+            $0.left.right.equalToSuperview().inset(16)
+            $0.height.equalTo(130)
         }
         
         imageCollectionView.snp.makeConstraints {
             $0.right.equalToSuperview()
-            $0.top.equalTo(ImageView.snp.bottom).offset(30)
+            $0.top.bottom.equalToSuperview()
             $0.left.equalToSuperview().inset(22)
+        }
+        
+        InfoView.snp.makeConstraints {
+            $0.top.equalTo(collectionBackgroungView.snp.bottom).offset(-20)
+            $0.left.right.equalToSuperview().inset(16)
         }
         
         ShopNameLabel.snp.makeConstraints{
@@ -133,17 +178,17 @@ class ShopVC: UIViewController {
             $0.top.equalTo(ShopNameLabel.snp.bottom).offset(2)
         }
         
-//        ShopAccessLabel.snp.makeConstraints{
-//            $0.height.equalTo(70)
-//            $0.width.equalToSuperview()
-//            $0.top.equalTo(ShopCallLabel.snp.bottom).offset(2)
-//        }
-//
-//        ShopInfoLabel.snp.makeConstraints{
-//            $0.bottom.equalToSuperview().offset(2)
-//            $0.width.equalToSuperview()
-//            $0.top.equalTo(ShopAccessLabel.snp.bottom).offset(2)
-//        }
+        ShopAccessLabel.snp.makeConstraints{
+            $0.height.equalTo(70)
+            $0.width.equalToSuperview()
+            $0.top.equalTo(ShopCallLabel.snp.bottom).offset(2)
+        }
+
+        ShopInfoLabel.snp.makeConstraints{
+            $0.left.right.equalToSuperview()
+            $0.height.equalTo(50)
+            $0.top.equalTo(ShopAccessLabel.snp.bottom).offset(2)
+        }
         
         
     }
@@ -161,6 +206,7 @@ class ShopVC: UIViewController {
             self.ShopInfoLabel.text = self.model.shop.text
             self.ShopAccessLabel.text = self.model.shop.addr
             self.ShopCallLabel.text = self.model.shop.tel
+            self.imageCollectionView.reloadData()
         }
         
         self.model.getAllItem {
@@ -178,18 +224,11 @@ class ShopVC: UIViewController {
 extension ShopVC: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.images.count+1
+        return numOfItem
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoCell", for: indexPath) as! PhotoCell
-        
-//        switch indexPath.row {
-//        case images.count: // カメラボタン
-//            let image = UIImage(named: "camera")
-//            let tintedImage = image?.withRenderingMode(.alwaysTemplate)
-//            cell.configure(image: tintedImage!)
-//            cell.remakeCametaAlbumDesign()
         // 写真
             // UIImageに変換する
         cell.configure(self.model.items[indexPath.row]) { image in
@@ -207,7 +246,8 @@ extension ShopVC: UICollectionViewDelegate {
         let nextVC = self.itemVC(index: indexPath.row)
         let naviVC = UINavigationController(rootViewController: nextVC)
         nextVC.view.backgroundColor = UIColor.gray
-        self.navigationController?.pushViewController(naviVC, animated: true)
+        present(naviVC, animated: true, completion: nil)
+//        self.navigationController?.pushViewController(naviVC, animated: true)
     }
 }
 
