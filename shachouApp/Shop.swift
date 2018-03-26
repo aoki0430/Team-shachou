@@ -25,20 +25,22 @@ struct Shop {
 }
 
 struct Item {
+    var id = 0
     var shop_id = 0
     var itemname = ""
     var itemtext = ""
     var size = ""
-    var itemimage = ""
+    var image = ""
     
     init() {
     }
     
     init(_ json: JSON) {
+        id = json["id"].intValue
         shop_id = json["shop_id"].intValue
         itemname = json["itemname"].stringValue
         itemtext = json["itemtext"].stringValue
         size = json["size"].stringValue
-        itemimage = json["itemimage"].stringValue
+        image = json["image"].stringValue
     }
 }

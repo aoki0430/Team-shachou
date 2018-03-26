@@ -107,6 +107,6 @@ extension TopVC: UITableViewDelegate {
         let nextVC = self.shopVC(index: indexPath.row)
         let naviVC = UINavigationController(rootViewController: nextVC)
         nextVC.view.backgroundColor = UIColor.gray
-        self.present(naviVC, animated: true, completion: nil)
+        self.navigationController?.pushViewController(naviVC, animated: true)
     }
 }

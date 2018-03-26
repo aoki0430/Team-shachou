@@ -75,7 +75,8 @@ final class ShopModel {
     }
     
     func getAllItem(completion: @escaping ()->Void) {
-        Alamofire.request(urlGetAllItem, method: .get).responseJSON { [weak self] response in
+        let url = urlGetAllItem + "/\(shopID)"
+        Alamofire.request(url, method: .get).responseJSON { [weak self] response in
             guard let strongSelf = self else { return }
             switch response.result {
             case let .success(value) :

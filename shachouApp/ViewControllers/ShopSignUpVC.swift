@@ -110,9 +110,9 @@ final class ShopSignUpVC: UIViewController {
 //                let naviVC = UINavigationController(rootViewController: nextVC)
 //                nextVC.view.backgroundColor = UIColor.white
 //                self?.present(naviVC, animated: true, completion: nil)
+//            } else {
+//            print("エラーだよこのやろう！")
 //            }
-//        }
-        
     }
     
     override func didReceiveMemoryWarning(){
