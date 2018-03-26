@@ -30,6 +30,7 @@
 		FCF09BF820633A50009C0289 /* TopCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF09BF720633A50009C0289 /* TopCell.swift */; };
 		FCF09BFA20654B8A009C0289 /* ItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF09BF920654B8A009C0289 /* ItemModel.swift */; };
 		FCF09BFC20668A4D009C0289 /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF09BFB20668A4D009C0289 /* PhotoCell.swift */; };
+		FCF09BFE20669EE8009C0289 /* ItemVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF09BFD20669EE8009C0289 /* ItemVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +86,7 @@
 		FCF09BF720633A50009C0289 /* TopCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopCell.swift; sourceTree = "<group>"; };
 		FCF09BF920654B8A009C0289 /* ItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemModel.swift; sourceTree = "<group>"; };
 		FCF09BFB20668A4D009C0289 /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
+		FCF09BFD20669EE8009C0289 /* ItemVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +147,7 @@
 				F4F49965204FBE2100BE081A /* UserSignUpVC.swift */,
 				F4F49967204FC68700BE081A /* TopVC.swift */,
 				F4F4996B204FC6DB00BE081A /* ShopVC.swift */,
+				FCF09BFD20669EE8009C0289 /* ItemVC.swift */,
 				F4F499632046C0FA00BE081A /* ShopSignUpVC.swift */,
 				F4F49969204FC6BA00BE081A /* MyShopVC.swift */,
 				FCF09BF720633A50009C0289 /* TopCell.swift */,
@@ -538,6 +541,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCF09BFE20669EE8009C0289 /* ItemVC.swift in Sources */,
 				FCF09BFA20654B8A009C0289 /* ItemModel.swift in Sources */,
 				FC2F33B420584C7C00940ADC /* AppDelegate.swift in Sources */,
 				FCE0EFAA204BE6D600A19FCF /* MyShopPresenter.swift in Sources */,
