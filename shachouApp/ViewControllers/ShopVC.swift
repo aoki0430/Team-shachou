@@ -103,10 +103,6 @@ class ShopVC: UIViewController {
 //        self.view.addSubview(ShopInfoLabel)
         self.scrollView.addSubview(imageCollectionView)
         self.navigationItem.title = self.model.shop.shopname //JSON形式でお店の名前欲しい
-        self.model.getAllItem {
-            self.imageCollectionView.reloadData()
-        }
-        
         scrollView.snp.makeConstraints {
             $0.width.equalToSuperview()
             $0.top.equalToSuperview()
@@ -166,6 +162,11 @@ class ShopVC: UIViewController {
             self.ShopAccessLabel.text = self.model.shop.addr
             self.ShopCallLabel.text = self.model.shop.tel
         }
+        
+        self.model.getAllItem {
+            self.imageCollectionView.reloadData()
+        }
+
     }
     
     override func didReceiveMemoryWarning() {
