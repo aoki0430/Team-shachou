@@ -1,4 +1,5 @@
 import UIKit
+import SnapKit
 
 class ShopVC: UIViewController {
     let model : ShopModel
@@ -60,6 +61,53 @@ class ShopVC: UIViewController {
     
     
     
+    let ImageBackView: UIView = {
+        let view = UIView()
+        view.layer.cornerRadius = 4
+        view.backgroundColor = UIColor.white
+        return view
+    }()
+    
+    let ShopNameLabel: UILabel = {
+        let label = UILabel()
+        label.text = "お店１"
+        label.textAlignment = .center
+        label.layer.cornerRadius = 4
+        label.backgroundColor = UIColor.white
+        return label
+    }()
+    
+    let ShopCallLabel: UILabel = {
+        let label = UILabel()
+        label.text = "電話:0120-117-117"
+        label.textAlignment = .center
+        label.layer.cornerRadius = 4
+        label.backgroundColor = UIColor.white
+        return label
+    }()
+    
+    let ShopAccessLabel: UILabel = {
+        let label = UILabel()
+        label.text = "住所:東京都調布市調布ヶ丘１"
+        label.textAlignment = .center
+        label.layer.cornerRadius = 4
+        label.backgroundColor = UIColor.white
+        return label
+    }()
+    
+    let ShopInfoLabel: UILabel = {
+        let label = UILabel()
+        label.numberOfLines = 2
+        label.text = "詳細:チェックシャツの\n洋服をたくさん売っているお店です"
+        label.textAlignment = .center
+        label.layer.cornerRadius = 4
+        label.backgroundColor = UIColor.white
+        return label
+    }()
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.fetchShop()
@@ -111,6 +159,7 @@ class ShopVC: UIViewController {
             self.ShopAccessLabel.text = self.model.shop.addr
             self.ShopCallLabel.text = self.model.shop.tel
         }
+
     }
     
     override func didReceiveMemoryWarning() {

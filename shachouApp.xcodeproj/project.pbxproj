@@ -16,6 +16,7 @@
 		F4F49968204FC68700BE081A /* TopVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F49967204FC68700BE081A /* TopVC.swift */; };
 		F4F4996A204FC6BA00BE081A /* MyShopVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F49969204FC6BA00BE081A /* MyShopVC.swift */; };
 		F4F4996C204FC6DB00BE081A /* ShopVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F4996B204FC6DB00BE081A /* ShopVC.swift */; };
+		F4F4996E2062392900BE081A /* MyShopEditVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F4996D2062392900BE081A /* MyShopEditVC.swift */; };
 		FC2F33B420584C7C00940ADC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2F33B320584C7C00940ADC /* AppDelegate.swift */; };
 		FCE0EECC203F141000A19FCF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCE0EECB203F141000A19FCF /* Assets.xcassets */; };
 		FCE0EECF203F141000A19FCF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCE0EECD203F141000A19FCF /* LaunchScreen.storyboard */; };
@@ -65,6 +66,7 @@
 		F4F49967204FC68700BE081A /* TopVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopVC.swift; sourceTree = "<group>"; };
 		F4F49969204FC6BA00BE081A /* MyShopVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyShopVC.swift; sourceTree = "<group>"; };
 		F4F4996B204FC6DB00BE081A /* ShopVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopVC.swift; sourceTree = "<group>"; };
+		F4F4996D2062392900BE081A /* MyShopEditVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyShopEditVC.swift; sourceTree = "<group>"; };
 		FC2F33B320584C7C00940ADC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FCE0EEC1203F141000A19FCF /* shachouApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = shachouApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCE0EECB203F141000A19FCF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -147,8 +149,10 @@
 				F4F4996B204FC6DB00BE081A /* ShopVC.swift */,
 				F4F499632046C0FA00BE081A /* ShopSignUpVC.swift */,
 				F4F49969204FC6BA00BE081A /* MyShopVC.swift */,
+				F4F4996D2062392900BE081A /* MyShopEditVC.swift */,
 				FCF09BF720633A50009C0289 /* TopCell.swift */,
 				FCF09BFB20668A4D009C0289 /* PhotoCell.swift */,
+
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -540,6 +544,7 @@
 				FC2F33B420584C7C00940ADC /* AppDelegate.swift in Sources */,
 				FCE0EFAA204BE6D600A19FCF /* MyShopPresenter.swift in Sources */,
 				FCE0EF9B2046A35100A19FCF /* Constant.swift in Sources */,
+				F4F4996E2062392900BE081A /* MyShopEditVC.swift in Sources */,
 				FCF09BFC20668A4D009C0289 /* PhotoCell.swift in Sources */,
 				FCF09BF420633997009C0289 /* Shop.swift in Sources */,
 				FCF09BF620633A01009C0289 /* TopModel.swift in Sources */,
