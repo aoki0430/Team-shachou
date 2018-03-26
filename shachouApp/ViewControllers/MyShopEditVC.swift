@@ -8,7 +8,7 @@
 
 import UIKit
 import SnapKit
-import Material
+//import Material
 
 final class MyShopEditVC: UIViewController {
     
@@ -20,48 +20,40 @@ final class MyShopEditVC: UIViewController {
     }()
     
     
-    let ShopNameField: TextField = {
-        let textField = TextField()
+    let ShopNameField: UITextField = {
+        let textField = UITextField()
         textField.placeholder = "お店の名前"
         textField.textAlignment = .center
         textField.backgroundColor = UIColor.white
-        textField.placeholderActiveColor = UIColor.gray //textFieldの中の文字色
         textField.dividerColor = UIColor.gray
-        textField.dividerActiveColor = UIColor.gray
         return textField
     }()
 
     
-    let ShopCallField: TextField = {
-        let textField = TextField()
+    let ShopCallField: UITextField = {
+        let textField = UITextField()
         textField.placeholder = "電話番号"
         textField.textAlignment = .center
         textField.backgroundColor = UIColor.white
-        textField.placeholderActiveColor = UIColor.gray
         textField.dividerColor = UIColor.gray
-        textField.dividerActiveColor = UIColor.gray
         return textField
     }()
 
-    let ShopAccessField: TextField = {
-        let textField = TextField()
+    let ShopAccessField: UITextField = {
+        let textField = UITextField()
         textField.placeholder = "住所"
         textField.textAlignment = .center
         textField.backgroundColor = UIColor.white
-        textField.placeholderActiveColor = UIColor.gray
         textField.dividerColor = UIColor.gray
-        textField.dividerActiveColor = UIColor.gray
         return textField
     }()
     
-    let ShopInfoField: TextField = {
-        let textField = TextField()
+    let ShopInfoField: UITextField = {
+        let textField = UITextField()
         textField.placeholder = "詳細"
         textField.textAlignment = .center
         textField.backgroundColor = UIColor.white
-        textField.placeholderActiveColor = UIColor.gray
         textField.dividerColor = UIColor.gray
-        textField.dividerActiveColor = UIColor.gray
         return textField
     }()
     

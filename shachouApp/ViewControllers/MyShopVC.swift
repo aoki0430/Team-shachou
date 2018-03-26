@@ -13,8 +13,8 @@ import DKImagePickerController
 
 class MyShopVC: UIViewController {
     
-    let ImageBackView: UIView = {
-        let view = UIView()
+    let ImageBackView: UIImageView = {
+        let view = UIImageView()
         view.layer.cornerRadius = 4
         view.backgroundColor = UIColor.white
         return view
@@ -122,7 +122,7 @@ class MyShopVC: UIViewController {
         let naviVC = UINavigationController(rootViewController: nextVC)
         nextVC.view.backgroundColor = UIColor.gray
         self.present(naviVC, animated: true, completion: nil)
-
+    }
     
     @objc func cameraBtnDidTap() {
         let pickerController = DKImagePickerController()
@@ -132,7 +132,7 @@ class MyShopVC: UIViewController {
             for asset in assets {
                 asset.fetchFullScreenImage(true, completeBlock: { (image, info) in
                     if let image = image {
-                        self.imageView.image = image
+                        self.ImageBackView.image = image
                     }
                 })
             }
