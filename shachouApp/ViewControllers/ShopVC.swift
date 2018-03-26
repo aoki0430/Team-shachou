@@ -19,16 +19,35 @@ class ShopVC: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    let scrollView: UIScrollView = {
-        let scrollView = UIScrollView()
-        scrollView.backgroundColor = .brown
-        return scrollView
-    }()
+//    let coverView : UIView = {
+//        let view = UIView()
+//        view.backgroundColor = .brown
+//
+//        return view
+//    }()
+    
+//    let scrollView: UIScrollView = {
+//        let scrollView = UIScrollView()
+//        scrollView.backgroundColor = .brown
+//        return scrollView
+//    }()
     
     let ImageView: UIImageView = {
         let view = UIImageView()
         view.layer.cornerRadius = 4
         view.backgroundColor = UIColor.white
+        return view
+    }()
+    
+    let mainInfoView: UIView = {
+        let view = UIView()
+        view.layer.cornerRadius = 4
+        view.backgroundColor = .white
+        //以下影（shadow）
+        view.shadowColor = .black
+        view.layer.shadowRadius = 4
+        view.layer.shadowOpacity = 0.1
+        view.layer.shadowOffset = CGSize(width: 0, height: 3)
         return view
     }()
     
@@ -46,8 +65,9 @@ class ShopVC: UIViewController {
     
     let imageCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
-        let size = (UIScreen.main.bounds.size.width / 2) - 5
-        layout.itemSize = CGSize(width:size ,height: 200)
+        let size = (UIScreen.main.bounds.size.width / 2) - 20
+        layout.itemSize = CGSize(width: size ,height: 150)
+        layout.headerReferenceSize = CGSize(width: 0, height: 50)
         let margin: CGFloat = 3.0
         layout.minimumLineSpacing = margin
         layout.minimumInteritemSpacing = margin
@@ -67,28 +87,16 @@ class ShopVC: UIViewController {
     
     let ShopNameLabel: UILabel = {
         let label = UILabel()
-        //        label.text = "お店１"
         label.textAlignment = .center
         label.layer.cornerRadius = 4
         label.backgroundColor = UIColor.white
+        label.font = UIFont.systemFont(ofSize: 20)
         return label
-    }()
-    
-    let InfoView: UIView = {
-        let view = UIView()
-        view.layer.cornerRadius = 2
-        view.backgroundColor = .white
-        //以下影（shadow）
-        view.shadowColor = .black
-        view.layer.shadowRadius = 2
-        view.layer.shadowOpacity = 0.1
-        view.layer.shadowOffset = CGSize(width: 0, height: 3)
-        return view
     }()
     
     let ShopCallLabel: UILabel = {
         let label = UILabel()
-        //        label.text = "電話:0120-117-117"
+        label.font = UIFont.systemFont(ofSize: 15)
         label.textAlignment = .center
         label.layer.cornerRadius = 4
         label.backgroundColor = UIColor.white
@@ -97,7 +105,7 @@ class ShopVC: UIViewController {
     
     let ShopAccessLabel: UILabel = {
         let label = UILabel()
-        //        label.text = "住所:東京都調布市調布ヶ丘１"
+        label.font = UIFont.systemFont(ofSize: 15)
         label.textAlignment = .center
         label.layer.cornerRadius = 4
         label.backgroundColor = UIColor.white
@@ -106,11 +114,12 @@ class ShopVC: UIViewController {
     
     let ShopInfoLabel: UILabel = {
         let label = UILabel()
-        label.numberOfLines = 2
-        //        label.text = "詳細:チェックシャツの\n洋服をたくさん売っているお店です"
+        label.numberOfLines = 0
+        label.font = UIFont.systemFont(ofSize: 15)
         label.textAlignment = .center
         label.layer.cornerRadius = 4
         label.backgroundColor = UIColor.white
+        label.sizeToFit()
         return label
     }()
     
@@ -121,77 +130,100 @@ class ShopVC: UIViewController {
         self.imageCollectionView.delegate = self
         self.imageCollectionView.dataSource = self
         self.imageCollectionView.register(PhotoCell.self, forCellWithReuseIdentifier: "PhotoCell")
+        self.imageCollectionView.register(UICollectionReusableView.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "header")
         
-         self.fetchShop()
-        self.view.addSubview(scrollView)
-        self.scrollView.addSubview(ImageView)
-        self.scrollView.addSubview(self.collectionBackgroungView)
-        self.scrollView.addSubview(self.InfoView)
-        self.collectionBackgroungView.addSubview(self.imageCollectionView)
-        self.InfoView.addSubview(ShopNameLabel)
-        self.InfoView.addSubview(ShopCallLabel)
-        self.InfoView.addSubview(ShopAccessLabel)
-        self.InfoView.addSubview(ShopInfoLabel)
+        self.fetchShop()
+//        self.view.addSubview(scrollView)
+//        self.scrollView.addSubview(coverView)
+        self.view.addSubview(ImageView)
+//        self.coverView.addSubview(mainInfoView)
+//        self.coverView.addSubview(self.collectionBackgroungView)
+//        self.collectionBackgroungView.addSubview(self.imageCollectionView)
+//        self.coverView.addSubview(imageCollectionView)
+        self.view.addSubview(imageCollectionView)
+        self.mainInfoView.addSubview(ShopNameLabel)
+        self.mainInfoView.addSubview(ShopCallLabel)
+        self.mainInfoView.addSubview(ShopAccessLabel)
+        self.mainInfoView.addSubview(ShopInfoLabel)
         self.title = self.model.shop.shopname //JSON形式でお店の名前欲しい
-        scrollView.snp.makeConstraints {
-            
-            $0.width.equalToSuperview()
-            
-            let statusBarHeight = UIApplication.shared.statusBarFrame.size.height
-            $0.top.equalToSuperview().inset(-(statusBarHeight + 44))
-            $0.left.right.bottom.equalToSuperview()
-        }
         
+//        scrollView.snp.makeConstraints {
+//            $0.width.equalToSuperview()
+//            $0.top.equalToSuperview()
+//            $0.left.right.bottom.equalToSuperview()
+//        }
+        
+//        coverView.snp.makeConstraints {
+//            $0.edges.equalToSuperview()
+//            $0.width.equalToSuperview()
+//            $0.height.equalTo(1000)
+//        }
         
         ImageView.snp.makeConstraints{
-            $0.width.equalToSuperview()
             $0.top.left.right.equalToSuperview()
-            $0.height.equalTo(150)
+            $0.height.equalTo(300)
         }
         
-        collectionBackgroungView.snp.remakeConstraints {
-            $0.top.equalTo(self.ImageView.snp.bottom).offset(10)
+        mainInfoView.snp.makeConstraints {
+            $0.top.equalTo(ImageView.snp.bottom).offset(15)
             $0.left.right.equalToSuperview().inset(16)
-            $0.height.equalTo(130)
+            $0.height.equalTo(80)
         }
-        
-        imageCollectionView.snp.makeConstraints {
-            $0.right.equalToSuperview()
-            $0.top.bottom.equalToSuperview()
-            $0.left.equalToSuperview().inset(22)
-        }
-        
-        InfoView.snp.makeConstraints {
-            $0.top.equalTo(collectionBackgroungView.snp.bottom).offset(-20)
-            $0.left.right.equalToSuperview().inset(16)
-        }
-        
+    
         ShopNameLabel.snp.makeConstraints{
-            $0.height.equalTo(70)
             $0.width.equalToSuperview()
-            $0.top.equalTo(imageCollectionView.snp.bottom).offset(2)
+            $0.left.right.equalToSuperview()
+            $0.top.equalToSuperview().inset(10)
+            $0.height.equalTo(20)
         }
         
         ShopCallLabel.snp.makeConstraints{
-            $0.height.equalTo(70)
             $0.width.equalToSuperview()
-            $0.top.equalTo(ShopNameLabel.snp.bottom).offset(2)
+            $0.top.equalTo(ShopNameLabel.snp.bottom).offset
+            $0.left.right.equalToSuperview()
+            $0.height.equalTo(15)
         }
         
         ShopAccessLabel.snp.makeConstraints{
-            $0.height.equalTo(70)
             $0.width.equalToSuperview()
-            $0.top.equalTo(ShopCallLabel.snp.bottom).offset(2)
+            $0.top.equalTo(ShopCallLabel.snp.bottom).offset
+            $0.left.right.equalToSuperview()
+            $0.height.equalTo(15)
         }
 
         ShopInfoLabel.snp.makeConstraints{
             $0.left.right.equalToSuperview()
-            $0.height.equalTo(50)
-            $0.top.equalTo(ShopAccessLabel.snp.bottom).offset(2)
+            $0.top.equalTo(ShopAccessLabel.snp.bottom).offset
+//            $0.height.equalTo(15)
         }
         
+//        collectionBackgroungView.snp.remakeConstraints {
+//            $0.top.equalTo(mainInfoView.snp.bottom).offset(10)
+//            $0.left.right.equalToSuperview().inset(16)
+////            $0.height.equalTo(130)
+//        }
         
+        imageCollectionView.snp.makeConstraints {
+            $0.top.equalTo(ShopInfoLabel.snp.bottom).offset(25)
+            $0.left.right.equalToSuperview().inset(10)
+//            $0.left.equalTo(ShopInfoLabel.snp.left)
+//            $0.right.equalTo(ShopInfoLabel.snp.right)
+            $0.height.equalTo(150 * model.items.count / 2)
+        }
+
     }
+    
+//    override func viewDidLayoutSubviews() {
+//        imageCollectionView.snp.remakeConstraints {
+//            $0.top.equalTo(mainInfoView.snp.bottom).offset(20)
+//            $0.height.equalTo(imageCollectionView.contentSize)
+//        }
+//            tableHeight.constant = tableView.contentSize.height
+//        imageCollectionView.contentSize = CGSize(width: scrollView.frame.width, height: )
+//        let height = ImageView.frame.height + mainInfoView.frame.height + imageCollectionView.frame.height + 200
+//        scrollView.contentSize = CGSize(width: scrollView.frame.width, height: height)
+        
+//    }
     
     func itemVC(index: Int) -> ItemVC {
         let itemVC = ItemVC(itemID: self.model.items[index].id)
@@ -223,6 +255,10 @@ class ShopVC: UIViewController {
 
 extension ShopVC: UICollectionViewDataSource {
     
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return numOfItem
     }
@@ -238,6 +274,7 @@ extension ShopVC: UICollectionViewDataSource {
         }
         return cell
     }
+    
 }
 
 
