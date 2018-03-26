@@ -8,6 +8,8 @@
 
 import UIKit
 import SnapKit
+import Photos
+import DKImagePickerController
 
 class MyShopVC: UIViewController {
     
@@ -120,6 +122,23 @@ class MyShopVC: UIViewController {
         let naviVC = UINavigationController(rootViewController: nextVC)
         nextVC.view.backgroundColor = UIColor.gray
         self.present(naviVC, animated: true, completion: nil)
+
+    
+    @objc func cameraBtnDidTap() {
+        let pickerController = DKImagePickerController()
+        
+        pickerController.didSelectAssets = { (assets: [DKAsset]) in
+            print("didSelectAssets")
+            for asset in assets {
+                asset.fetchFullScreenImage(true, completeBlock: { (image, info) in
+                    if let image = image {
+                        self.imageView.image = image
+                    }
+                })
+            }
+        }
+        
+        self.present(pickerController, animated: true) {}
     }
     
     override func didReceiveMemoryWarning() {

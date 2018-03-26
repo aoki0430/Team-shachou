@@ -122,6 +122,17 @@ final class ShopSignUpVC: UIViewController {
         let naviVC = UINavigationController(rootViewController: nextVC)
         nextVC.view.backgroundColor = UIColor.gray
         self.present(naviVC, animated: true, completion: nil)
+//        guard let name = nameField.text,
+//            let pwd = pwdField.text else { return }
+//        AuthModel().SignUp(name: name, pwd: pwd) { [weak self] success in
+//            if success {
+//                let nextVC = MyShopVC()
+//                let naviVC = UINavigationController(rootViewController: nextVC)
+//                nextVC.view.backgroundColor = UIColor.white
+//                self?.present(naviVC, animated: true, completion: nil)
+//            }
+//        }
+      
     }
     
     override func didReceiveMemoryWarning(){
