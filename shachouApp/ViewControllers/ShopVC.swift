@@ -1,5 +1,5 @@
 import UIKit
-import ImageViewer
+import SnapKit
 
 class ShopVC: UIViewController {
     let model : ShopModel
@@ -122,8 +122,7 @@ class ShopVC: UIViewController {
         label.sizeToFit()
         return label
     }()
-    
-    
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         

@@ -100,8 +100,28 @@ final class ShopSignUpVC: UIViewController {
         }
     }
     
+//    @objc func screen1() {// selectorで呼び出す場合Swift4からは「@objc」をつける。
+//        button1.isEnabled = false
+//        guard let name = nameField.text,
+//            let pwd = pwdField.text else { return }
+//        AuthModel().SignUp(name: name, pwd: pwd) { [weak self] success in
+//            if success {
+//                let nextVC = MyShopVC()
+//                let naviVC = UINavigationController(rootViewController: nextVC)
+//                nextVC.view.backgroundColor = UIColor.white
+//                self?.present(naviVC, animated: true, completion: nil)
+//            } else {
+//                self?.button1.isEnabled = true
+//            }
+//        }
+//    }
+    
     @objc func screen1() {// selectorで呼び出す場合Swift4からは「@objc」をつける。
-        present(TopVC(), animated: true, completion: nil)
+        let nextVC = MyShopVC()
+//        let nextVC = MyShopEditVC()
+        let naviVC = UINavigationController(rootViewController: nextVC)
+        nextVC.view.backgroundColor = UIColor.gray
+        self.present(naviVC, animated: true, completion: nil)
 //        guard let name = nameField.text,
 //            let pwd = pwdField.text else { return }
 //        AuthModel().SignUp(name: name, pwd: pwd) { [weak self] success in
@@ -113,6 +133,7 @@ final class ShopSignUpVC: UIViewController {
 //            } else {
 //            print("エラーだよこのやろう！")
 //            }
+//        }
     }
     
     override func didReceiveMemoryWarning(){
