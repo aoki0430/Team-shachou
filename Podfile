@@ -29,6 +29,8 @@ target 'shachouApp' do
 
     pod 'Kingfisher'
 
+    pod 'ImageViewer'
+
   end
 
   target 'shachouAppTests' do
