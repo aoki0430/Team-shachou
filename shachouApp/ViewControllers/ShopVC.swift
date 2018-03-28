@@ -67,10 +67,9 @@ class ShopVC: UIViewController {
         let layout = UICollectionViewFlowLayout()
         let size = (UIScreen.main.bounds.size.width / 2) - 20
         layout.itemSize = CGSize(width: size ,height: 150)
-        layout.headerReferenceSize = CGSize(width: 0, height: 50)
         let margin: CGFloat = 3.0
         layout.minimumLineSpacing = margin
-        layout.minimumInteritemSpacing = margin
+        layout.minimumInteritemSpacing = margin / 2
         layout.sectionInset = UIEdgeInsets(top: margin, left: margin, bottom: margin, right: margin)
         layout.scrollDirection = .vertical
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
@@ -140,6 +139,7 @@ class ShopVC: UIViewController {
 //        self.collectionBackgroungView.addSubview(self.imageCollectionView)
 //        self.coverView.addSubview(imageCollectionView)
         self.view.addSubview(imageCollectionView)
+        self.view.addSubview(mainInfoView)
         self.mainInfoView.addSubview(ShopNameLabel)
         self.mainInfoView.addSubview(ShopCallLabel)
         self.mainInfoView.addSubview(ShopAccessLabel)
@@ -207,7 +207,8 @@ class ShopVC: UIViewController {
             $0.left.right.equalToSuperview().inset(10)
 //            $0.left.equalTo(ShopInfoLabel.snp.left)
 //            $0.right.equalTo(ShopInfoLabel.snp.right)
-            $0.height.equalTo(150 * model.items.count / 2)
+//            $0.height.equalTo(150 * model.items.count / 2)
+            $0.bottom.equalToSuperview()
         }
 
     }

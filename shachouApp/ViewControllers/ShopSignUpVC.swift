@@ -117,7 +117,7 @@ final class ShopSignUpVC: UIViewController {
 //    }
     
     @objc func screen1() {// selectorで呼び出す場合Swift4からは「@objc」をつける。
-        let nextVC = MyShopVC()
+        let nextVC = TopVC()
 //        let nextVC = MyShopEditVC()
         let naviVC = UINavigationController(rootViewController: nextVC)
         nextVC.view.backgroundColor = UIColor.gray
