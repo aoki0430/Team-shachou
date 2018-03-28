@@ -42,9 +42,7 @@ final class TopVC: UIViewController {
         tableView.separatorStyle = .none
         
         self.tableView.reloadData()
-        self.model.getShopInfo {
-            self.tableView.reloadData()
-        }
+        self.fetch()
         print(model.shops)
         
         self.view.addSubview(tableView)
@@ -108,5 +106,6 @@ extension TopVC: UITableViewDelegate {
         let naviVC = UINavigationController(rootViewController: nextVC)
         nextVC.view.backgroundColor = UIColor.gray
         self.present(naviVC, animated: true, completion: nil)
+//        self.navigationController?.pushViewController(naviVC, animated: true)
     }
 }

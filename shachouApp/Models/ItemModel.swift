@@ -17,7 +17,7 @@ final class ItemModel {
         Alamofire.upload(
             multipartFormData: { multipartFormData in
                 // 送信する値の指定をここでします
-                multipartFormData.append(data, withName: "itemimage", fileName: "itemimage", mimeType: "image/png")
+                multipartFormData.append(data, withName: "image", fileName: "image", mimeType: "image/png")
                 multipartFormData.append(itemname.data(using: String.Encoding.utf8)!, withName: "itemname")
                 multipartFormData.append(itemtext.data(using: String.Encoding.utf8)!, withName: "itemtext")
                 multipartFormData.append(size.data(using: String.Encoding.utf8)!, withName: "size")
@@ -41,7 +41,7 @@ final class ItemModel {
         )
     }
     
-    func getItemInfo(completion: @escaping ()->Void) {
+    func fetchItem(completion: @escaping ()->Void) {
         let url = urlitem + "/\(shop_id)"
         Alamofire.request(url, method: .get).responseJSON { [weak self] response in
             guard let strongSelf = self else { return }
@@ -68,7 +68,7 @@ final class ItemModel {
 //        itemnamelabel.text = self.model.item.itemname
 //        itemlabel.text = self.model.item.itemtext
 //        sizelavel.text = self.model.item.size
-//        itemimageView = self.
+//        itemimageView = self.model.item.image
 //    }
 //}
 
