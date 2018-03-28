@@ -22,7 +22,7 @@ class TopCell: UITableViewCell {
         let label = UILabel()
         //        label.font = UIFont(name: "NotoSansCJKjp-Medium", size: 13)
         label.textColor = UIColor.white
-        label.font = .boldSystemFont(ofSize: 18)
+        label.font = .boldSystemFont(ofSize: 25)
         label.layer.cornerRadius = 2
         label.numberOfLines = 0
         label.lineBreakMode = NSLineBreakMode.byCharWrapping
@@ -69,7 +69,7 @@ class TopCell: UITableViewCell {
 
         bgView.snp.remakeConstraints {
             $0.edges.equalToSuperview().inset(1)
-            $0.bottom.equalTo(photoIV.snp.bottom)
+            $0.bottom.equalTo(photoIV.snp.bottom).offset(3)
 //            $0.bottom.equalTo(shopInformationLabel.snp.bottom).offset(2)
         }
 
