@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0A10E2675BD3AF44529BC969 /* Pods_shachouApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D31494D1956C75835357EA72 /* Pods_shachouApp.framework */; };
 		2A0B118E307612B1E99872E5 /* Pods_shachouAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D53195B86335D29590AE912E /* Pods_shachouAppTests.framework */; };
+		34B3CE01206925C1006B1B89 /* EditItemVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B3CE00206925C1006B1B89 /* EditItemVC.swift */; };
 		AFF5B99CEAE8ECC0B528BA6E /* Pods_shachouAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FBE8DB980236E8FFBAA9AF6 /* Pods_shachouAppUITests.framework */; };
 		F4F499622046853100BE081A /* WelcomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F499612046853100BE081A /* WelcomeVC.swift */; };
 		F4F499642046C0FA00BE081A /* ShopSignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F499632046C0FA00BE081A /* ShopSignUpVC.swift */; };
@@ -55,6 +56,7 @@
 		166B78C201E54218CADCDC54 /* Pods-shachouApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-shachouApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-shachouApp/Pods-shachouApp.debug.xcconfig"; sourceTree = "<group>"; };
 		1D15922405ED669D5935E908 /* Pods-shachouAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-shachouAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-shachouAppTests/Pods-shachouAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		25EE96F51EF7A55C3562F330 /* Pods-shachouAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-shachouAppUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-shachouAppUITests/Pods-shachouAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		34B3CE00206925C1006B1B89 /* EditItemVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditItemVC.swift; sourceTree = "<group>"; };
 		517FBE2E87DA94DFB02A16FC /* Pods-shachouAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-shachouAppUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-shachouAppUITests/Pods-shachouAppUITests.release.xcconfig"; sourceTree = "<group>"; };
 		5B1E96D2D8EC2308C5D4067B /* Pods-shachouApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-shachouApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-shachouApp/Pods-shachouApp.release.xcconfig"; sourceTree = "<group>"; };
 		5FBE8DB980236E8FFBAA9AF6 /* Pods_shachouAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_shachouAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -155,7 +157,7 @@
 				F4F4996D2062392900BE081A /* MyShopEditVC.swift */,
 				FCF09BF720633A50009C0289 /* TopCell.swift */,
 				FCF09BFB20668A4D009C0289 /* PhotoCell.swift */,
-
+				34B3CE00206925C1006B1B89 /* EditItemVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -545,6 +547,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34B3CE01206925C1006B1B89 /* EditItemVC.swift in Sources */,
 				FCF09BFE20669EE8009C0289 /* ItemVC.swift in Sources */,
 				FCF09BFA20654B8A009C0289 /* ItemModel.swift in Sources */,
 				FC2F33B420584C7C00940ADC /* AppDelegate.swift in Sources */,
