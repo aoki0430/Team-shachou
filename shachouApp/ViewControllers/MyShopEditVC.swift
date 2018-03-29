@@ -1,19 +1,32 @@
-//
-//  MyShopEditVC.swift
-//  shachouApp
-//
-//  Created by 相楽昌希 on 2018/03/21.
-//  Copyright © 2018年 Team-shachou. All rights reserved.
-//
 
 import UIKit
 import SnapKit
-//import Material
+import DKImagePickerController
+import SwiftyUserDefaults
+
 
 final class MyShopEditVC: UIViewController {
     
-    let ImageBackView: UIView = {
-        let view = UIView()
+    let model : ShopModel
+    
+    init(shopID: Int) {
+        model = ShopModel(shopID)
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    
+    let cameraButton: UIButton = {
+        let btn = UIButton()
+        btn.addTarget(self, action: #selector(cameraBtnDidTap), for: .touchUpInside)
+        return btn
+    }()
+        
+    let ImageBackView: UIImageView = {
+        let view = UIImageView()
         view.layer.cornerRadius = 4
         view.backgroundColor = UIColor.white
         return view
@@ -57,27 +70,21 @@ final class MyShopEditVC: UIViewController {
         return textField
     }()
     
-    let button1: UIButton = {
-        let button = UIButton()
-        button.backgroundColor = UIColor.brown
-        button.setTitle("完了", for: [])
-        button.layer.borderWidth = 0.1
-        button.layer.cornerRadius = 5
-        button.titleLabel?.font = .systemFont(ofSize: 20, weight: UIFont.Weight(rawValue: 1))
-        button.addTarget(self, action: #selector(screen1), for: .touchUpInside)
-        return button
-    }()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.fetch()
+        self.view.addSubview(cameraButton)
         self.view.addSubview(ImageBackView)
         self.view.addSubview(ShopNameField)
         self.view.addSubview(ShopCallField)
         self.view.addSubview(ShopAccessField)
         self.view.addSubview(ShopInfoField)
-        self.view.addSubview(button1)
-        self.navigationItem.title = "お店1" //JSON形式でお店の名前欲しい
-        //        rightBarButton = UIBarButtonItem(title: "", style: .plain, target: self, action: #selector(MyShopVC.screen1))
+        self.navigationItem.title = self.model.shop.shopname
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "完了！", style: .plain, target: self, action: #selector(screen1))
+        
+        cameraButton.snp.makeConstraints {
+            $0.edges.equalTo(ImageBackView.snp.edges)
+        }
         
         ImageBackView.snp.makeConstraints{
             $0.height.equalTo(300)
@@ -109,19 +116,47 @@ final class MyShopEditVC: UIViewController {
             $0.top.equalTo(ShopAccessField.snp.bottom).offset(2)
         }
         
-        button1.snp.makeConstraints{
-            $0.bottom.equalToSuperview().offset(-10)
-            $0.right.equalToSuperview().offset(-10)
-            $0.width.equalTo(150)
-            $0.height.equalTo(30)
+    }
+    
+    func fetch() {
+        self.model.fetchShop {
+            let url = URL(string: self.model.shop.image)
+            self.ImageBackView.kf.setImage(with: url)
+            self.ShopNameField.text = self.model.shop.shopname
+            self.ShopCallField.text = self.model.shop.tel
+            self.ShopAccessField.text = self.model.shop.addr
+            self.ShopInfoField.text = self.model.shop.text
         }
     }
     
     @objc func screen1() {// selectorで呼び出す場合Swift4からは「@objc」をつける。
-        let nextVC = MyShopVC()
-        let naviVC = UINavigationController(rootViewController: nextVC)
-        nextVC.view.backgroundColor = UIColor.gray
-        self.present(naviVC, animated: true, completion: nil)
+        guard let shopname = ShopNameField.text,
+            let address = ShopAccessField.text,
+            let tel = ShopCallField.text,
+            let text = ShopInfoField.text,
+            let image = ImageBackView.image
+            else { return }
+        
+        ShopModel(Defaults[.shopid]).Editshop(shopname: shopname, address: address, tel: tel, text: text, image: image) {
+            self.dismiss(animated: true, completion: nil)
+        }
+    }
+    
+    @objc func cameraBtnDidTap() {
+        let pickerController = DKImagePickerController()
+        
+        pickerController.didSelectAssets = { (assets: [DKAsset]) in
+            print("didSelectAssets")
+            for asset in assets {
+                asset.fetchFullScreenImage(true, completeBlock: { (image, info) in
+                    if let image = image {
+                        self.ImageBackView.image = image
+                    }
+                })
+            }
+        }
+        
+        self.present(pickerController, animated: true) {}
     }
     
     override func didReceiveMemoryWarning() {

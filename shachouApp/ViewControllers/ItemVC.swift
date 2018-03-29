@@ -60,11 +60,14 @@ class ItemVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = .black
         self.fetchItem()
         self.view.addSubview(ImageView)
         self.view.addSubview(ItemNameLabel)
         self.view.addSubview(SizeLabel)
         self.view.addSubview(ItemTextLabel)
+        self.navigationItem.title = self.model.item.itemname
+        self.view.backgroundColor = .black
         
         ImageView.snp.makeConstraints{
             $0.height.equalTo(250)

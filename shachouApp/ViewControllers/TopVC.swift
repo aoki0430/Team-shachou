@@ -33,6 +33,9 @@ final class TopVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationController?.navigationItem.titleView = UIImageView(image: UIImage(named: "Applogo"))
+        
+
         tableView = UITableView()
         tableView.delegate = self
         tableView.dataSource = self
@@ -40,6 +43,7 @@ final class TopVC: UIViewController {
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 200
         tableView.separatorStyle = .none
+        tableView.backgroundColor = .black
         
         self.tableView.reloadData()
         self.fetch()
@@ -102,10 +106,10 @@ extension TopVC: UITableViewDataSource {
 
 extension TopVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let nextVC = self.shopVC(index: indexPath.row)
-        let naviVC = UINavigationController(rootViewController: nextVC)
-        nextVC.view.backgroundColor = UIColor.gray
-        self.present(naviVC, animated: true, completion: nil)
-//        self.navigationController?.pushViewController(naviVC, animated: true)
+//        let nextVC = self.shopVC(index: indexPath.row)
+//        let naviVC = UINavigationController(rootViewController: nextVC)
+//        nextVC.view.backgroundColor = UIColor.gray
+//        self.present(naviVC, animated: true, completion: nil)
+        self.navigationController?.pushViewController(shopVC(index: indexPath.row), animated: true)
     }
 }
