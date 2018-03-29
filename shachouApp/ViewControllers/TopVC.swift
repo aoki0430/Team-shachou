@@ -30,11 +30,13 @@ final class TopVC: UIViewController {
     
     var tableView: UITableView!
     
+    let iconimage = UIImageView(image: UIImage(named:"Teamlogo2")?.tint(with: .brown))
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationController?.navigationItem.titleView = UIImageView(image: UIImage(named: "Applogo"))
-        
+        iconimage.contentMode = .scaleAspectFit
+        self.navigationController!.view.addSubview(self.iconimage)
 
         tableView = UITableView()
         tableView.delegate = self
@@ -52,6 +54,12 @@ final class TopVC: UIViewController {
         self.view.addSubview(tableView)
         tableView.snp.makeConstraints {
             $0.edges.equalToSuperview()
+        }
+        
+        iconimage.snp.makeConstraints {
+            $0.bottom.equalTo(navigationController!.navigationBar.snp.bottom).inset(10)
+            $0.centerX.equalToSuperview()
+            $0.height.equalTo(30)
         }
     }
     
