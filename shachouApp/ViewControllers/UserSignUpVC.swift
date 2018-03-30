@@ -68,10 +68,6 @@ final class UserSignUpVC: UIViewController {
         self.view.addSubview(pwdField)
         self.view.addSubview(button1)
         
-        
-        self.view.backgroundColor = UIColor.white
-        
-        
         WelcomeView.snp.makeConstraints {
             $0.edges.equalToSuperview()
         }
@@ -93,7 +89,6 @@ final class UserSignUpVC: UIViewController {
             $0.height.equalTo(40)
         }
         
-        
         button1.snp.makeConstraints{
             $0.height.equalTo(50)
             $0.width.equalTo(280)
@@ -102,41 +97,17 @@ final class UserSignUpVC: UIViewController {
         }
     }
     
-//    @objc func screen1() {// selectorで呼び出す場合Swift4からは「@objc」をつける。
-//        self.button1.isEnabled = false
-//        guard let name = nameField.text,
-//            let pwd = pwdField.text else { return }
-//        AuthModel().SignUp(name: name, pwd: pwd) { [weak self] success in
-//            if success {
-//                let nextVC = TopVC()
-//                let naviVC = UINavigationController(rootViewController: nextVC)
-//                nextVC.view.backgroundColor = UIColor.white
-//                self?.present(naviVC, animated: true, completion: nil)
-//            } else {
-//                self?.button1.isEnabled = true
-//            }
-//        }
-//    }
-    
     @objc func screen1() {// selectorで呼び出す場合Swift4からは「@objc」をつける。
         guard let name = nameField.text,
             let pwd = pwdField.text else { return }
-        AuthModel().SignUp(name: name, pwd: pwd) { [weak self] success in
+        AuthModel().UserSignUp(name: name, pwd: pwd) { [weak self] success in
             if success {
                 let nextVC = TopVC()
                 let naviVC = UINavigationController(rootViewController: nextVC)
-                nextVC.view.backgroundColor = UIColor.white
                 self?.present(naviVC, animated: true, completion: nil)
             }
         }
     }
-    
-//    @objc func screen1() {// selectorで呼び出す場合Swift4からは「@objc」をつける。
-//        let nextVC = TopVC()
-//        let naviVC = UINavigationController(rootViewController: nextVC)
-//        nextVC.view.backgroundColor = UIColor.white
-//        self.present(naviVC, animated: true, completion: nil)
-//    }
 
     override func didReceiveMemoryWarning(){
         super.didReceiveMemoryWarning()

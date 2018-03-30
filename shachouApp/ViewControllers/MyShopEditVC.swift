@@ -73,12 +73,14 @@ final class MyShopEditVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.fetch()
+        self.view.backgroundColor = UIColor(red: 0.2, green: 0.047, blue: 0, alpha: 1.0)
         self.view.addSubview(cameraButton)
         self.view.addSubview(ImageBackView)
         self.view.addSubview(ShopNameField)
         self.view.addSubview(ShopCallField)
         self.view.addSubview(ShopAccessField)
         self.view.addSubview(ShopInfoField)
+        self.navigationController?.isNavigationBarHidden = false
         self.navigationItem.title = self.model.shop.shopname
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "完了！", style: .plain, target: self, action: #selector(screen1))
         

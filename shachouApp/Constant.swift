@@ -8,11 +8,13 @@ extension DefaultsKeys {
 }
 
 
-let urlAuthSignUp = "https://vintageapi.herokuapp.com/api/consumers"
+let urlShopSignUp = "https://vintageapi.herokuapp.com/api/consumers"
+let urlUserSignUp = "https://vintageapi.herokuapp.com/api/consumers"
+let urlCreateShop = "https://vintageapi.herokuapp.com/shop/upload"
 let urlGetAllShop = "https://vintageapi.herokuapp.com/shop/index"
 let urlGetAllItem = "https://vintageapi.herokuapp.com/item"
-let urlEditShop = ""
-let urlEditItem = ""
+let urlEditShop = "https://vintageapi.herokuapp.com/shop"
+let urlEditItem = "https://vintageapi.herokuapp.com/edititem"
 let urlshop = "https://vintageapi.herokuapp.com/shop"
 let urlitem = "https://vintageapi.herokuapp.com/showitem"
 

@@ -92,7 +92,6 @@ final class Header: UICollectionReusableView {
         mainInfoView.snp.makeConstraints {
             $0.top.equalTo(ImageView.snp.bottom).offset(5)
             $0.left.right.equalToSuperview().inset(5)
-            $0.height.equalTo(80)
         }
         
         ShopNameLabel.snp.makeConstraints{

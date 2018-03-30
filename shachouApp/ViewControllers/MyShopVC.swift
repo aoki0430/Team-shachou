@@ -19,6 +19,17 @@ final class MyShopVC: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    let button1: UIButton = {
+        let button = UIButton()
+        button.backgroundColor = UIColor.brown
+        button.setTitle("アイテムを追加", for: [])
+        button.layer.borderWidth = 0.1
+        button.layer.cornerRadius = 25
+        button.titleLabel?.font = .systemFont(ofSize: 20, weight: UIFont.Weight(rawValue: 1))
+        button.addTarget(self, action: #selector(button1DidTap), for: .touchUpInside)
+        return button
+    }()
+    
     let imageCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         let margin: CGFloat = 5.0
@@ -52,6 +63,7 @@ final class MyShopVC: UIViewController {
         
         self.fetchShop()
         self.view.addSubview(imageCollectionView)
+        self.view.addSubview(button1)
         self.navigationItem.title = self.model.shop.shopname
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "編集！", style: .plain, target: self, action: #selector(screen1))
         
@@ -74,9 +86,17 @@ final class MyShopVC: UIViewController {
     }
     
     @objc func screen1() {// selectorで呼び出す場合Swift4からは「@objc」をつける。
-        self.present(MyShopEditVC(shopID: Defaults[.shopid]), animated: true, completion: nil)
+        let nextVC = MyShopEditVC(shopID: Defaults[.shopid])
+        let naviVC = UINavigationController(rootViewController: nextVC)
+        self.present(naviVC, animated: true, completion: nil)
     }
     
+    @objc func button1DidTap() {
+//        let nextVC = ItemEditVC(shopID: Defaults[.shopid])
+//        let naviVC = UINavigationController(rootViewController: nextVC)
+//        self.present(naviVC, animated: true, completion: nil)
+        return
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }

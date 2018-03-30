@@ -64,7 +64,6 @@ import SnapKit
         self.view.addSubview(button2)
         
         self.view.backgroundColor = UIColor.white
-        
         TeamlogoView.snp.makeConstraints {
             $0.height.equalTo(70)
             $0.width.equalTo(210)

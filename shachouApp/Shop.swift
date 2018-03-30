@@ -31,6 +31,7 @@ struct Item {
     var itemtext = ""
     var size = ""
     var image = ""
+    var cost = ""
     
     init() {
     }
@@ -41,6 +42,7 @@ struct Item {
         itemname = json["itemname"].stringValue
         itemtext = json["itemtext"].stringValue
         size = json["size"].stringValue
+        cost = json["cost"].stringValue
         image = json["image"]["url"].stringValue
     }
 }

@@ -1,5 +1,6 @@
 
 import UIKit
+import SwiftyUserDefaults
 
 class ItemVC: UIViewController {
     let model : ItemModel
@@ -66,6 +67,7 @@ class ItemVC: UIViewController {
         self.view.addSubview(ItemNameLabel)
         self.view.addSubview(SizeLabel)
         self.view.addSubview(ItemTextLabel)
+//        if Defaults[.isShopAccount] 
         self.navigationItem.title = self.model.item.itemname
 
         
@@ -90,7 +92,6 @@ class ItemVC: UIViewController {
         }
         
         ItemTextLabel.snp.makeConstraints{
-            $0.height.equalTo(70)
             $0.left.right.equalToSuperview().inset(5)
             $0.top.equalTo(SizeLabel.snp.bottom).offset(5)
         }

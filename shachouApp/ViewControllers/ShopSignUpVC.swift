@@ -1,6 +1,7 @@
 import UIKit
 import SnapKit
 import Material
+import SwiftyUserDefaults
 
 final class ShopSignUpVC: UIViewController {
     
@@ -66,9 +67,7 @@ final class ShopSignUpVC: UIViewController {
         self.view.addSubview(pwdField)
         self.view.addSubview(button1)
         
-        
         self.view.backgroundColor = UIColor.white
-        
         
         WelcomeView.snp.makeConstraints {
             $0.edges.equalToSuperview()
@@ -91,7 +90,6 @@ final class ShopSignUpVC: UIViewController {
             $0.height.equalTo(40)
         }
         
-        
         button1.snp.makeConstraints{
             $0.height.equalTo(50)
             $0.width.equalTo(280)
@@ -100,30 +98,20 @@ final class ShopSignUpVC: UIViewController {
         }
     }
     
-    
-//    @objc func screen1() {// selectorで呼び出す場合Swift4からは「@objc」をつける。
-//        let nextVC = TopVC()
-//        let naviVC = UINavigationController(rootViewController: nextVC)
-//        nextVC.view.backgroundColor = UIColor.white
-//        self.present(naviVC, animated: true, completion: nil)
-////        guard let name = nameField.text,
-////            let pwd = pwdField.text else { return }
-////        AuthModel().SignUp(name: name, pwd: pwd) { [weak self] success in
-////            if success {
-////                let nextVC = MyShopVC()
-////                let naviVC = UINavigationController(rootViewController: nextVC)
-////                nextVC.view.backgroundColor = UIColor.white
-////                self?.present(naviVC, animated: true, completion: nil)
-////            } else {
-////            print("エラーだよこのやろう！")
-////            }
-////        }
-//    }
-    
     @objc func screen1() {// selectorで呼び出す場合Swift4からは「@objc」をつける。
-            let nextVC = TopVC()
-            let naviVC = UINavigationController(rootViewController: nextVC)
-            self.present(naviVC, animated: true, completion: nil)
+        guard let name = nameField.text,
+            let pwd = pwdField.text else { return }
+        AuthModel().ShopSignUp(name: name, pwd: pwd) { [weak self] success in
+            if success {
+                AuthModel().CreateShop(shopname: "\(name)", image: UIImage(named:"emptyImage")!) {[weak self] success in
+                    let nextVC = MyShopVC(shopID: Defaults[.shopid])
+                    let naviVC = UINavigationController(rootViewController: nextVC)
+                    self?.present(naviVC, animated: true, completion: nil)
+                }
+            } else {
+            print("エラーだよこのやろう！")
+            }
+        }
     }
     
     override func didReceiveMemoryWarning(){

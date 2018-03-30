@@ -90,7 +90,6 @@ final class TopVC: UIViewController {
 
 extension TopVC: UITableViewDataSource {
     
-    
     func numberOfSections(in _: UITableView) -> Int {
         return 1
     }

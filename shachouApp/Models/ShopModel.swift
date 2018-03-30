@@ -39,7 +39,7 @@ final class ShopModel {
                   completion: @escaping () -> Void) {
         
         guard let data = UIImagePNGRepresentation(image) else { return }
-        
+        let url = "\(urlEditShop)/\(shopID)"
         Alamofire.upload(
             multipartFormData: { multipartFormData in
                 // 送信する値の指定をここでします
@@ -50,7 +50,8 @@ final class ShopModel {
                 multipartFormData.append(text.data(using: String.Encoding.utf8)!, withName: "text")
         },
             
-            to: urlEditItem,
+            to: url,
+            method: .put,
             encodingCompletion: { encodingResult in
                 switch encodingResult {
                 case .success(let upload, _, _):
@@ -63,9 +64,10 @@ final class ShopModel {
                     // 失敗
                     print(encodingError)
                 }
-        }
+            }
         )
     }
+    
     
     func getAllItem(completion: @escaping ()->Void) {
         let url = urlGetAllItem + "/\(shopID)"

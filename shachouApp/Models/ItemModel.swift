@@ -13,7 +13,7 @@ final class ItemModel {
     func EditItem(image: UIImage, itemname: String, itemtext: String, size:String) {
         
         guard let data = UIImagePNGRepresentation(image) else { return }
-        
+        let url = "\(urlEditItem)/\(shop_id)"
         Alamofire.upload(
             multipartFormData: { multipartFormData in
                 // 送信する値の指定をここでします
@@ -21,10 +21,12 @@ final class ItemModel {
                 multipartFormData.append(itemname.data(using: String.Encoding.utf8)!, withName: "itemname")
                 multipartFormData.append(itemtext.data(using: String.Encoding.utf8)!, withName: "itemtext")
                 multipartFormData.append(size.data(using: String.Encoding.utf8)!, withName: "size")
+                multipartFormData.append(size.data(using: String.Encoding.utf8)!, withName: "cost")
                 
         },
             
-            to: urlEditItem,
+            to: url,
+            method: .put,
             encodingCompletion: { encodingResult in
                 switch encodingResult {
                 case .success(let upload, _, _):
