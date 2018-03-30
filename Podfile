@@ -31,6 +31,8 @@ target 'shachouApp' do
 
     pod 'ImageViewer'
 
+    pod 'ZoomTransitioning'
+
   end
 
   target 'shachouAppTests' do

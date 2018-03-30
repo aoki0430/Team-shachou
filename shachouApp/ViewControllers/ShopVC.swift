@@ -1,5 +1,6 @@
 import UIKit
 import SnapKit
+import ZoomTransitioning
 
 class ShopVC: UIViewController {
     let model : ShopModel
@@ -32,7 +33,7 @@ class ShopVC: UIViewController {
 //        return scrollView
 //    }()
     
-    let ImageView: UIImageView = {
+    var ImageView: UIImageView = {
         let view = UIImageView()
         view.layer.cornerRadius = 4
         view.backgroundColor = UIColor.white
@@ -272,6 +273,8 @@ extension ShopVC: UICollectionViewDataSource {
                 self.model.items[indexPath.row].image = image
             }
         }
+        
+        ImageView = cell.imageView
         return cell
     }
     
@@ -288,4 +291,31 @@ extension ShopVC: UICollectionViewDelegate {
     }
 }
 
-
+extension ShopVC: ZoomTransitionSourceDelegate {
+    
+    // アニメーション対象のUIImageViewを返す
+    func transitionSourceImageView() -> UIImageView {
+        return ImageView
+    }
+    
+    // スクリーンに対するアニメーション開始位置を返す
+    func transitionSourceImageViewFrame(forward: Bool) -> CGRect {
+//        guard let selectedImageView = selectedImageView else { return CGRect.zero }
+        return ImageView.convert(ImageView.bounds, to: view)
+    }
+    
+    // 画面遷移直前
+    func transitionSourceWillBegin() {
+        ImageView.isHidden = true
+    }
+    
+    // 画面遷移完了後
+    func transitionSourceDidEnd() {
+        ImageView.isHidden = false
+    }
+    
+    // 画面遷移キャンセル後
+    func transitionSourceDidCancel() {
+        ImageView.isHidden = false
+    }
+}

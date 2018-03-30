@@ -19,6 +19,7 @@
 		F4F4996C204FC6DB00BE081A /* ShopVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F4996B204FC6DB00BE081A /* ShopVC.swift */; };
 		F4F4996E2062392900BE081A /* MyShopEditVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F4996D2062392900BE081A /* MyShopEditVC.swift */; };
 		FC2F33B420584C7C00940ADC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2F33B320584C7C00940ADC /* AppDelegate.swift */; };
+		FCA6F112206D51F100E33917 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA6F111206D51F100E33917 /* NavigationController.swift */; };
 		FCE0EECC203F141000A19FCF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCE0EECB203F141000A19FCF /* Assets.xcassets */; };
 		FCE0EECF203F141000A19FCF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCE0EECD203F141000A19FCF /* LaunchScreen.storyboard */; };
 		FCE0EEDA203F141000A19FCF /* shachouAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE0EED9203F141000A19FCF /* shachouAppTests.swift */; };
@@ -71,6 +72,7 @@
 		F4F4996B204FC6DB00BE081A /* ShopVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopVC.swift; sourceTree = "<group>"; };
 		F4F4996D2062392900BE081A /* MyShopEditVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyShopEditVC.swift; sourceTree = "<group>"; };
 		FC2F33B320584C7C00940ADC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FCA6F111206D51F100E33917 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		FCE0EEC1203F141000A19FCF /* shachouApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = shachouApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCE0EECB203F141000A19FCF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FCE0EECE203F141000A19FCF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -196,6 +198,7 @@
 				F4F4996020466FCE00BE081A /* ViewControllers */,
 				FCE0EF9A2046A35100A19FCF /* Constant.swift */,
 				FCF09BF320633997009C0289 /* Shop.swift */,
+				FCA6F111206D51F100E33917 /* NavigationController.swift */,
 			);
 			path = shachouApp;
 			sourceTree = "<group>";
@@ -440,6 +443,7 @@
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyUserDefaults/SwiftyUserDefaults.framework",
+				"${BUILT_PRODUCTS_DIR}/ZoomTransitioning/ZoomTransitioning.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -453,6 +457,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyUserDefaults.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ZoomTransitioning.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -564,6 +569,7 @@
 				FCF09BF2206293FB009C0289 /* ShopModel.swift in Sources */,
 				F4F499642046C0FA00BE081A /* ShopSignUpVC.swift in Sources */,
 				F4F4996A204FC6BA00BE081A /* MyShopVC.swift in Sources */,
+				FCA6F112206D51F100E33917 /* NavigationController.swift in Sources */,
 				F4F49968204FC68700BE081A /* TopVC.swift in Sources */,
 				F4F49966204FBE2100BE081A /* UserSignUpVC.swift in Sources */,
 			);

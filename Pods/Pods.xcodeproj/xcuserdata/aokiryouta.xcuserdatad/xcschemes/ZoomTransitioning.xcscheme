@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'F2DD147918D2751702C26AA279372A99'
-               BlueprintName = 'SwiftyJSON'
+               BlueprintIdentifier = 'CAFD2C50318B38CE83B58BA8BA00F282'
+               BlueprintName = 'ZoomTransitioning'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'SwiftyJSON.framework'>
+               BuildableName = 'ZoomTransitioning.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

@@ -1,5 +1,7 @@
 
 import UIKit
+import SnapKit
+import ZoomTransitioning
 
 class ItemVC: UIViewController {
     let model : ItemModel
@@ -13,6 +15,8 @@ class ItemVC: UIViewController {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    var largeImageView = UIImageView()
     
     let ImageView: UIImageView = {
         let view = UIImageView()
@@ -106,4 +110,57 @@ class ItemVC: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
+}
+
+extension ItemVC: ZoomTransitionSourceDelegate {
+    
+    func transitionSourceImageView() -> UIImageView {
+        return ImageView
+    }
+    
+    func transitionSourceImageViewFrame(forward: Bool) -> CGRect {
+        return ImageView.convert(ImageView.bounds, to: view)
+    }
+    
+    func transitionSourceWillBegin() {
+        ImageView.isHidden = true
+    }
+    
+    func transitionSourceDidEnd() {
+        ImageView.isHidden = false
+    }
+    
+    func transitionSourceDidCancel() {
+        ImageView.isHidden = false
+    }
+}
+
+
+// MARK: - ZoomTransitionDestinationDelegate
+extension ItemVC: ZoomTransitionDestinationDelegate {
+    
+    func transitionDestinationImageViewFrame(forward: Bool) -> CGRect {
+        if forward {
+            let x: CGFloat = 0.0
+            let y = topLayoutGuide.length
+            let width = view.frame.width
+            let height = width * 2.0 / 3.0
+            return CGRect(x: x, y: y, width: width, height: height)
+        } else {
+            return largeImageView.convert(largeImageView.bounds, to: view)
+        }
+    }
+    
+    func transitionDestinationWillBegin() {
+        largeImageView.isHidden = true
+    }
+    
+    func transitionDestinationDidEnd(transitioningImageView imageView: UIImageView) {
+        largeImageView.isHidden = false
+        largeImageView.image = imageView.image
+    }
+    
+    func transitionDestinationDidCancel() {
+        largeImageView.isHidden = false
+    }
 }
