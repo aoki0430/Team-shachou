@@ -15,7 +15,7 @@ final class Header: UICollectionReusableView {
         view.layer.cornerRadius = 4
         view.backgroundColor = .white
         //以下影（shadow）
-        view.shadowColor = .black
+        view.shadowColor = .brown
         view.layer.shadowRadius = 4
         view.layer.shadowOpacity = 0.1
         view.layer.shadowOffset = CGSize(width: 0, height: 3)
@@ -73,6 +73,7 @@ final class Header: UICollectionReusableView {
     func addSubviews() {
         self.addSubview(ImageView)
         self.addSubview(mainInfoView)
+        self.backgroundColor = UIColor(red: 0.2, green: 0.047, blue: 0, alpha: 1.0)
         mainInfoView.addSubview(ShopNameLabel)
         mainInfoView.addSubview(ShopCallLabel)
         mainInfoView.addSubview(ShopAccessLabel)
@@ -81,13 +82,16 @@ final class Header: UICollectionReusableView {
     
     func makeconstrains() {
         ImageView.snp.makeConstraints{
-            $0.top.left.right.equalToSuperview()
+            
+            $0.top.equalToSuperview().offset(5)
+            $0.left.right.equalToSuperview().inset(5)
+//            $0.top.left.right.equalToSuperview()
             $0.height.equalTo(300)
         }
         
         mainInfoView.snp.makeConstraints {
-            $0.top.equalTo(ImageView.snp.bottom).offset(15)
-            $0.left.right.equalToSuperview().inset(16)
+            $0.top.equalTo(ImageView.snp.bottom).offset(5)
+            $0.left.right.equalToSuperview().inset(5)
             $0.height.equalTo(80)
         }
         

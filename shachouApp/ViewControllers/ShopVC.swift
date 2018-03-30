@@ -42,7 +42,7 @@ final class ShopVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.imageCollectionView.backgroundColor = .black
+        self.imageCollectionView.backgroundColor = UIColor(red: 0.2, green: 0.047, blue: 0, alpha: 1.0)
         self.imageCollectionView.delegate = self
         self.imageCollectionView.dataSource = self
         self.imageCollectionView.register(PhotoCell.self, forCellWithReuseIdentifier: "PhotoCell")

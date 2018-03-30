@@ -75,15 +75,15 @@ class TopCell: UITableViewCell {
 
         photoIV.snp.remakeConstraints {
             $0.top.left.right.equalToSuperview()
-            $0.height.equalTo(200)
-//            $0.top.left.equalToSuperview().inset(8)
+            $0.height.equalTo(250)
+            //            $0.top.left.equalToSuperview().inset(8)
             $0.bottom.lessThanOrEqualToSuperview().inset(25)
         }
 
         shopNameLabel.snp.remakeConstraints {
             $0.bottom.equalTo(photoIV.snp.bottom).inset(13)
             $0.left.equalTo(photoIV.snp.left).inset(13)
-            
+            $0.height.equalTo(30)
         }
 //
 //        shopInformationLabel.snp.remakeConstraints{
