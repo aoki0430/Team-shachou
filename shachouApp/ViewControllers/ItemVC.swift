@@ -7,7 +7,7 @@ class ItemVC: UIViewController {
     init(itemID: Int) {
         model = ItemModel(itemID)
         super.init(nibName: nil, bundle: nil)
-        self.view.backgroundColor = .white
+        self.view.backgroundColor = UIColor(red: 0.2, green: 0.047, blue: 0, alpha: 1.0)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -60,37 +60,39 @@ class ItemVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = .black
+        self.view.backgroundColor = UIColor(red: 0.2, green: 0.047, blue: 0, alpha: 1.0)
         self.fetchItem()
         self.view.addSubview(ImageView)
         self.view.addSubview(ItemNameLabel)
         self.view.addSubview(SizeLabel)
         self.view.addSubview(ItemTextLabel)
         self.navigationItem.title = self.model.item.itemname
-        self.view.backgroundColor = .black
+
         
         ImageView.snp.makeConstraints{
             $0.height.equalTo(250)
-            $0.width.equalToSuperview()
+            $0.width.equalTo(200)
             $0.top.equalToSuperview().offset(65)
+            $0.centerX.equalToSuperview()
         }
+        
         
         ItemNameLabel.snp.makeConstraints{
             $0.height.equalTo(70)
-            $0.width.equalToSuperview()
-            $0.top.equalTo(ImageView.snp.bottom).offset(2)
+            $0.left.right.equalToSuperview().inset(5)
+            $0.top.equalTo(ImageView.snp.bottom).offset(5)
         }
         
         SizeLabel.snp.makeConstraints{
             $0.height.equalTo(70)
-            $0.width.equalToSuperview()
-            $0.top.equalTo(ItemNameLabel.snp.bottom).offset(2)
+            $0.left.right.equalToSuperview().inset(5)
+            $0.top.equalTo(ItemNameLabel.snp.bottom).offset(5)
         }
         
         ItemTextLabel.snp.makeConstraints{
             $0.height.equalTo(70)
-            $0.width.equalToSuperview()
-            $0.top.equalTo(SizeLabel.snp.bottom).offset(2)
+            $0.left.right.equalToSuperview().inset(5)
+            $0.top.equalTo(SizeLabel.snp.bottom).offset(5)
         }
         
     }
