@@ -134,7 +134,7 @@ final class EditItemVC: UIViewController {
     }
     
             @objc func screen1() {// selectorで呼び出す場合Swift4からは「@objc」をつける。
-                let nextVC = MyShopVC()
+                let nextVC = MyShopVC(shopID: 1)
                 let naviVC = UINavigationController(rootViewController: nextVC)
                 nextVC.view.backgroundColor = UIColor.gray
                 self.present(naviVC, animated: true, completion: nil)

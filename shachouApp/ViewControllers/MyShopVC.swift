@@ -1,144 +1,80 @@
-//
-//  MyShopVC.swift
-//  shachouApp
-//
-//  Created by 相楽昌希 on 2018/03/07.
-//  Copyright © 2018年 Team-shachou. All rights reserved.
-//
 
 import UIKit
 import SnapKit
-import Photos
-import DKImagePickerController
+import SwiftyUserDefaults
 
-class MyShopVC: UIViewController {
+final class MyShopVC: UIViewController {
+    let model : ShopModel
     
-    let ImageBackView: UIImageView = {
-        let view = UIImageView()
-        view.layer.cornerRadius = 4
-        view.backgroundColor = UIColor.white
-        return view
-    }()
+    var numOfItem: Int {
+        return model.items.count
+    }
     
-    let ShopNameLabel: UILabel = {
-        let label = UILabel()
-        label.text = "お店１"
-        label.textAlignment = .center
-        label.layer.cornerRadius = 4
-        label.backgroundColor = UIColor.white
-        return label
-    }()
+    init(shopID: Int) {
+        model = ShopModel(shopID)
+        super.init(nibName: nil, bundle: nil)
+    }
     
-    let ShopCallLabel: UILabel = {
-        let label = UILabel()
-        label.text = "電話:0120-117-117"
-        label.textAlignment = .center
-        label.layer.cornerRadius = 4
-        label.backgroundColor = UIColor.white
-        return label
-    }()
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
-    let ShopAccessLabel: UILabel = {
-        let label = UILabel()
-        label.text = "住所:東京都調布市調布ヶ丘１"
-        label.textAlignment = .center
-        label.layer.cornerRadius = 4
-        label.backgroundColor = UIColor.white
-        return label
-    }()
-    
-    let ShopInfoLabel: UILabel = {
-        let label = UILabel()
-        label.numberOfLines = 2
-        label.text = "詳細:チェックシャツの\n洋服をたくさん売っているお店です"
-        label.textAlignment = .center
-        label.layer.cornerRadius = 4
-        label.backgroundColor = UIColor.white
-        return label
-    }()
-    
-    let button1: UIButton = {
-        let button = UIButton()
-        button.backgroundColor = UIColor.brown
-        button.setTitle("編集", for: [])
-        button.layer.borderWidth = 0.1
-        button.layer.cornerRadius = 5
-        button.titleLabel?.font = .systemFont(ofSize: 20, weight: UIFont.Weight(rawValue: 1))
-        button.addTarget(self, action: #selector(screen1), for: .touchUpInside)
-        return button
+    let imageCollectionView: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        let margin: CGFloat = 5.0
+        let size = (UIScreen.main.bounds.size.width - (4 * margin)) / 2
+        layout.itemSize = CGSize(width: size ,height: 200)
+        layout.headerReferenceSize = CGSize(width: UIScreen.main.bounds.width, height: 500)
+        layout.minimumLineSpacing = margin
+        layout.minimumInteritemSpacing = margin
+        layout.sectionInset = UIEdgeInsets(top: margin, left: margin, bottom: margin, right: margin)
+        layout.scrollDirection = .vertical
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collectionView.backgroundColor = .white
+        //        frame : .zero
+        //以下影（shadow）
+        collectionView.shadowColor = .black
+        collectionView.layer.shadowRadius = 4
+        collectionView.layer.shadowOpacity = 0.1
+        collectionView.layer.shadowOffset = CGSize(width: 0, height: 3)
+        
+        return collectionView
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.addSubview(ImageBackView)
-        self.view.addSubview(ShopNameLabel)
-        self.view.addSubview(ShopCallLabel)
-        self.view.addSubview(ShopAccessLabel)
-        self.view.addSubview(ShopInfoLabel)
-        self.view.addSubview(button1)
-        self.navigationItem.title = "お店1" //JSON形式でお店の名前欲しい
-//        rightBarButton = UIBarButtonItem(title: "", style: .plain, target: self, action: #selector(MyShopVC.screen1))
         
-        ImageBackView.snp.makeConstraints{
-            $0.height.equalTo(300)
-            $0.width.equalToSuperview()
-            $0.top.equalToSuperview().offset(65)
+        self.imageCollectionView.backgroundColor = .black
+        self.imageCollectionView.delegate = self
+        self.imageCollectionView.dataSource = self
+        self.imageCollectionView.register(PhotoCell.self, forCellWithReuseIdentifier: "PhotoCell")
+        self.imageCollectionView.register(Header.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "Header")
+        
+        self.fetchShop()
+        self.view.addSubview(imageCollectionView)
+        self.navigationItem.title = self.model.shop.shopname
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "編集！", style: .plain, target: self, action: #selector(screen1))
+        
+        imageCollectionView.snp.makeConstraints {
+            $0.edges.equalToSuperview()
         }
         
-        ShopNameLabel.snp.makeConstraints{
-            $0.height.equalTo(70)
-            $0.width.equalToSuperview()
-            $0.top.equalTo(ImageBackView.snp.bottom).offset(2)
+    }
+    
+    func itemVC(index: Int) -> ItemVC {
+        let itemVC = ItemVC(itemID: self.model.items[index].id)
+        return itemVC
+    }
+    
+    func fetchShop() {
+        self.model.getAllItem {
+            self.imageCollectionView.reloadData()
         }
         
-        ShopCallLabel.snp.makeConstraints{
-            $0.height.equalTo(70)
-            $0.width.equalToSuperview()
-            $0.top.equalTo(ShopNameLabel.snp.bottom).offset(2)
-        }
-        
-        ShopAccessLabel.snp.makeConstraints{
-            $0.height.equalTo(70)
-            $0.width.equalToSuperview()
-            $0.top.equalTo(ShopCallLabel.snp.bottom).offset(2)
-        }
-        
-        ShopInfoLabel.snp.makeConstraints{
-            $0.bottom.equalToSuperview().offset(2)
-            $0.width.equalToSuperview()
-            $0.top.equalTo(ShopAccessLabel.snp.bottom).offset(2)
-        }
-        
-        button1.snp.makeConstraints{
-            $0.bottom.equalToSuperview().offset(-10)
-            $0.right.equalToSuperview().offset(-10)
-            $0.width.equalTo(150)
-            $0.height.equalTo(30)
-        }
     }
     
     @objc func screen1() {// selectorで呼び出す場合Swift4からは「@objc」をつける。
-        let nextVC = MyShopEditVC()
-        let naviVC = UINavigationController(rootViewController: nextVC)
-        nextVC.view.backgroundColor = UIColor.gray
-        self.present(naviVC, animated: true, completion: nil)
-    }
-    
-    @objc func cameraBtnDidTap() {
-        let pickerController = DKImagePickerController()
-        
-        pickerController.didSelectAssets = { (assets: [DKAsset]) in
-            print("didSelectAssets")
-            for asset in assets {
-                asset.fetchFullScreenImage(true, completeBlock: { (image, info) in
-                    if let image = image {
-                        self.ImageBackView.image = image
-                    }
-                })
-            }
-        }
-        
-        self.present(pickerController, animated: true) {}
+        self.present(MyShopEditVC(shopID: Defaults[.shopid]), animated: true, completion: nil)
     }
     
     override func didReceiveMemoryWarning() {
@@ -146,3 +82,47 @@ class MyShopVC: UIViewController {
     }
     
 }
+
+extension MyShopVC: UICollectionViewDataSource {
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return numOfItem
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoCell", for: indexPath) as! PhotoCell
+        // 写真
+        // UIImageに変換する
+        cell.configure(self.model.items[indexPath.row]) { image in
+            if let image = image {
+                self.model.items[indexPath.row].image = image
+            }
+        }
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "Header", for: indexPath) as! Header
+        self.model.fetchShop {
+            let url = URL(string: self.model.shop.image)
+            header.ImageView.kf.setImage(with: url)
+            header.ShopNameLabel.text = self.model.shop.shopname
+            header.ShopInfoLabel.text = self.model.shop.text
+            header.ShopAccessLabel.text = self.model.shop.addr
+            header.ShopCallLabel.text = self.model.shop.tel
+        }
+        return header
+    }
+    
+}
+
+extension MyShopVC: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self.navigationController?.pushViewController(itemVC(index: indexPath.row), animated: true)
+    }
+}
+
