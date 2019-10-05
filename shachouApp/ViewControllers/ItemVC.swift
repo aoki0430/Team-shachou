@@ -15,6 +15,15 @@ class ItemVC: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    let batsuView = UIImageView()
+    
+    let batsubtn: UIButton = {
+        let btn = UIButton()
+        btn.addTarget(self, action: #selector(batsudid), for: .touchUpInside)
+        btn.layer.cornerRadius = 4
+        return btn
+    }()
+    
     let ImageView: UIImageView = {
         let view = UIImageView()
         view.layer.cornerRadius = 4
@@ -61,8 +70,11 @@ class ItemVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        batsuView.image = UIImage(named: "batsu")
         self.view.backgroundColor = UIColor(red: 0.2, green: 0.047, blue: 0, alpha: 1.0)
         self.fetchItem()
+        self.view.addSubview(batsuView)
+        self.batsuView.addSubview(batsubtn)
         self.view.addSubview(ImageView)
         self.view.addSubview(ItemNameLabel)
         self.view.addSubview(SizeLabel)
@@ -71,13 +83,22 @@ class ItemVC: UIViewController {
         self.navigationItem.title = self.model.item.itemname
 
         
+        batsuView.snp.makeConstraints {
+            $0.size.equalTo(40)
+            $0.left.equalToSuperview().inset(30)
+            $0.top.equalToSuperview().inset(40)
+        }
+        
+        batsubtn.snp.makeConstraints {
+            $0.edges.equalToSuperview()
+        }
+        
         ImageView.snp.makeConstraints{
             $0.height.equalTo(250)
             $0.width.equalTo(200)
             $0.top.equalToSuperview().offset(65)
             $0.centerX.equalToSuperview()
         }
-        
         
         ItemNameLabel.snp.makeConstraints{
             $0.height.equalTo(70)
@@ -96,6 +117,13 @@ class ItemVC: UIViewController {
             $0.top.equalTo(SizeLabel.snp.bottom).offset(5)
         }
         
+    }
+    
+    @objc func batsudid() {
+//        let nextVC = ShopVC(shopID: Defaults[.shopid])
+//        let naviVC = UINavigationController(rootViewController: nextVC)
+//        self.present(naviVC, animated: true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
     }
     
     func fetchItem() {

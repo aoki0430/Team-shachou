@@ -98,15 +98,19 @@ final class UserSignUpVC: UIViewController {
     }
     
     @objc func screen1() {// selectorで呼び出す場合Swift4からは「@objc」をつける。
-        guard let name = nameField.text,
-            let pwd = pwdField.text else { return }
-        AuthModel().UserSignUp(name: name, pwd: pwd) { [weak self] success in
-            if success {
-                let nextVC = TopVC()
-                let naviVC = UINavigationController(rootViewController: nextVC)
-                self?.present(naviVC, animated: true, completion: nil)
-            }
-        }
+         self.present(TopVC(), animated: true, completion: nil)
+//        guard let name = nameField.text,
+//            let pwd = pwdField.text else { return }
+//        AuthModel().UserSignUp(name: name, pwd: pwd) { [weak self] success in
+//            if success {
+//                let nextVC = TopVC()
+//                let naviVC = UINavigationController(rootViewController: nextVC)
+//                self?.present(naviVC, animated: true, completion: nil)
+//            }
+//        }
+            let nextVC = TopVC()
+            let naviVC = UINavigationController(rootViewController: nextVC)
+            self.navigationController?.pushViewController(naviVC, animated: true)
     }
 
     override func didReceiveMemoryWarning(){

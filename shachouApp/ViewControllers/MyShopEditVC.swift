@@ -132,16 +132,17 @@ final class MyShopEditVC: UIViewController {
     }
     
     @objc func screen1() {// selectorで呼び出す場合Swift4からは「@objc」をつける。
-        guard let shopname = ShopNameField.text,
-            let address = ShopAccessField.text,
-            let tel = ShopCallField.text,
-            let text = ShopInfoField.text,
-            let image = ImageBackView.image
-            else { return }
+//        guard let shopname = ShopNameField.text,
+//            let address = ShopAccessField.text,
+//            let tel = ShopCallField.text,
+//            let text = ShopInfoField.text,
+//            let image = ImageBackView.image
+//            else { return }
         
-        ShopModel(Defaults[.shopid]).Editshop(shopname: shopname, address: address, tel: tel, text: text, image: image) {
-            self.dismiss(animated: true, completion: nil)
-        }
+//        ShopModel(Defaults[.shopid]).Editshop(shopname: shopname, address: address, tel: tel, text: text, image: image) {
+////            self.dismiss(animated: true, completion: nil)
+//
+        self.dismiss(animated: true, completion: nil)
     }
     
     @objc func cameraBtnDidTap() {

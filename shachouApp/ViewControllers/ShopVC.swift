@@ -1,5 +1,6 @@
 import UIKit
 import SnapKit
+import CCZoomTransition
 
 final class ShopVC: UIViewController {
     let model : ShopModel
@@ -110,12 +111,14 @@ extension ShopVC: UICollectionViewDataSource {
         }
         return header
     }
-
 }
 
 extension ShopVC: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        self.navigationController?.pushViewController(itemVC(index: indexPath.row), animated: true)
+        let viewController = itemVC(index: indexPath.row)
+        viewController.cc_setZoomTransition(originalView: imageCollectionView.cellForItem(at: indexPath)!)
+        self.present(viewController, animated: true, completion: nil)
+//        self.navigationController?.pushViewController(itemVC(index: indexPath.row), animated: true)
     }
 }
 
